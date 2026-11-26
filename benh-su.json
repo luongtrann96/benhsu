@@ -1,11 +1,11 @@
 {
   "app": "phan-mem-benh-su",
   "version": 1,
-  "savedAt": "2026-11-26T07:32:10.016Z",
+  "savedAt": "2026-11-26T07:32:26.994Z",
   "settings": {
     "background": "goodnote"
   },
-  "activeId": "mwx7vllnnizkl",
+  "activeId": "mwx7vlln3e41k",
   "documents": [
     {
       "id": "mwx7vlln3n6mv",
@@ -41,7 +41,7 @@
       "parentId": "mwx7vllnjzaxi",
       "icon": "",
       "createdAt": "2026-11-26T07:14:20.315Z",
-      "updatedAt": "2026-11-26T07:14:20.315Z"
+      "updatedAt": "2026-11-26T07:32:22.161Z"
     },
     {
       "id": "mwx7vlln5c62k",
@@ -50,7 +50,7 @@
       "parentId": "mwx7vllnjzaxi",
       "icon": "",
       "createdAt": "2026-11-26T07:14:20.315Z",
-      "updatedAt": "2026-11-26T07:14:49.351Z"
+      "updatedAt": "2026-11-26T07:32:22.487Z"
     },
     {
       "id": "mwx7vlln3e41k",
@@ -68,7 +68,7 @@
       "parentId": "mwx7vllnjzaxi",
       "icon": "",
       "createdAt": "2026-11-26T07:14:20.315Z",
-      "updatedAt": "2026-11-26T07:14:20.315Z"
+      "updatedAt": "2026-11-26T07:32:22.817Z"
     },
     {
       "id": "mwx7vllnnizkl",
@@ -77,7 +77,7 @@
       "parentId": "mwx7vlln3n6mv",
       "icon": "🇻🇳",
       "createdAt": "2026-11-26T07:14:20.315Z",
-      "updatedAt": "2026-11-26T07:32:07.879Z"
+      "updatedAt": "2026-11-26T07:32:21.497Z"
     },
     {
       "id": "mwx7vllnxhhrf",
@@ -86,7 +86,7 @@
       "parentId": "mwx7vllnnizkl",
       "icon": "",
       "createdAt": "2026-11-26T07:14:20.315Z",
-      "updatedAt": "2026-11-26T07:14:20.315Z"
+      "updatedAt": "2026-11-26T07:32:23.392Z"
     },
     {
       "id": "mwx7vllnp3cts",
@@ -95,7 +95,7 @@
       "parentId": "mwx7vllnnizkl",
       "icon": "",
       "createdAt": "2026-11-26T07:14:20.315Z",
-      "updatedAt": "2026-11-26T07:14:49.904Z"
+      "updatedAt": "2026-11-26T07:32:24.663Z"
     },
     {
       "id": "mwx7vlln7o6wq",
@@ -149,7 +149,7 @@
       "parentId": "mwx7vlln3n6mv",
       "icon": "🇻🇳",
       "createdAt": "2026-11-26T07:14:20.315Z",
-      "updatedAt": "2026-11-26T07:14:20.315Z"
+      "updatedAt": "2026-11-26T07:32:24.096Z"
     },
     {
       "id": "mwx7vllndzkqm",
