@@ -1,11 +1,11 @@
 {
   "app": "phan-mem-benh-su",
   "version": 1,
-  "savedAt": "2026-11-26T08:57:03.862Z",
+  "savedAt": "2026-11-26T08:57:08.579Z",
   "settings": {
     "background": "goodnote"
   },
-  "activeId": "mwx7unf2jos2s",
+  "activeId": "mwx7unf2ythzk",
   "deleted": {},
   "documents": [
     {
@@ -101,11 +101,11 @@
     {
       "id": "mwx7unf2ythzk",
       "title": "Viêm bàng quang",
-      "html": "\n<h1 style=\"text-align:center\">BỆNH ÁN NGOẠI KHOA</h1>\n<p style=\"text-align:center\"><b>Viêm bàng quang</b></p>\n<h2>I. HÀNH CHÍNH</h2>\n<p>Họ và tên: …………………… &nbsp;&nbsp; Tuổi: …… &nbsp;&nbsp; Giới: ……</p>\n<p>Nghề nghiệp: …………………… &nbsp;&nbsp; Địa chỉ: ……………………</p>\n<p>Ngày giờ vào viện: …………………… &nbsp;&nbsp; Khoa: ……………………</p>\n<h2>II. LÝ DO VÀO VIỆN</h2>\n<p>……………………</p>\n<h2>III. BỆNH SỬ</h2>\n<p>Khởi phát: ……………………</p>\n<p>Diễn biến: ……………………</p>\n<p>Điều trị trước khi vào viện: ……………………</p>\n<p>Tình trạng lúc vào viện: ……………………</p>\n<h2>IV. TIỀN SỬ</h2>\n<p><b>1. Bản thân:</b> ……………………</p>\n<p><b>2. Gia đình:</b> ……………………</p>\n<h2>V. KHÁM LÂM SÀNG</h2>\n<p><b>1. Toàn thân:</b> Tỉnh, tiếp xúc tốt. Mạch … l/p, nhiệt độ … °C, huyết áp …/… mmHg, nhịp thở … l/p, SpO₂ … %.</p>\n<p><b>2. Khám bộ phận:</b></p>\n<ul><li>Bụng: ……………………</li><li>Tim mạch: ……………………</li><li>Hô hấp: ……………………</li><li>Các cơ quan khác: ……………………</li></ul>\n<h2>VI. CẬN LÂM SÀNG</h2>\n<p>……………………</p>\n<h2>VII. TÓM TẮT – CHẨN ĐOÁN</h2>\n<p><b>Tóm tắt bệnh án:</b> ……………………</p>\n<p><b>Chẩn đoán sơ bộ:</b> ……………………</p>\n<p><b>Hướng xử trí:</b> ……………………</p>",
+      "html": "",
       "parentId": "mwx7unf2c9wu2",
       "icon": "",
       "createdAt": "2026-11-26T07:13:36.014Z",
-      "updatedAt": "2026-11-26T07:13:36.014Z"
+      "updatedAt": "2026-11-26T08:57:08.569Z"
     },
     {
       "id": "mwx7unf2qqzjk",
