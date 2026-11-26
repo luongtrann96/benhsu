@@ -1,11 +1,11 @@
 {
   "app": "phan-mem-benh-su",
   "version": 1,
-  "savedAt": "2026-11-26T08:59:02.593Z",
+  "savedAt": "2026-11-26T08:59:10.392Z",
   "settings": {
     "background": "goodnote"
   },
-  "activeId": "mwxbm7vb65cf5",
+  "activeId": "mwx7unf18kffd",
   "deleted": {
     "mwx7vlln3n6mv": "2026-11-26T08:58:22.782Z",
     "mwx7vllnjzaxi": "2026-11-26T08:58:22.782Z",
@@ -25,7 +25,8 @@
     "mwx7vlln1h91s": "2026-11-26T08:58:22.782Z",
     "mwx7vllndzkqm": "2026-11-26T08:58:22.782Z",
     "mwx7vlln3id68": "2026-11-26T08:58:22.782Z",
-    "mwx7vllnciag9": "2026-11-26T08:58:22.782Z"
+    "mwx7vllnciag9": "2026-11-26T08:58:22.782Z",
+    "mwxbm7vb65cf5": "2026-11-26T08:59:10.383Z"
   },
   "documents": [
     {
@@ -171,15 +172,6 @@
       "icon": "🇻🇳",
       "createdAt": "2026-11-26T07:13:36.014Z",
       "updatedAt": "2026-11-26T07:13:36.014Z"
-    },
-    {
-      "id": "mwxbm7vb65cf5",
-      "title": "3. CHẤN THƯƠNG (bản sao)",
-      "html": "<h1>3. CHẤN THƯƠNG</h1><p><br></p>",
-      "parentId": "mwx7unf18kffd",
-      "icon": "🇻🇳",
-      "createdAt": "2026-11-26T08:59:01.079Z",
-      "updatedAt": "2026-11-26T08:59:01.079Z"
     },
     {
       "id": "mwx7unf2ilrz7",
