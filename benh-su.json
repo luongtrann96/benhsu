@@ -1,7 +1,7 @@
 {
   "app": "phan-mem-benh-su",
   "version": 1,
-  "savedAt": "2026-11-26T08:58:50.268Z",
+  "savedAt": "2026-11-26T08:58:52.111Z",
   "settings": {
     "background": "goodnote"
   },
@@ -193,11 +193,11 @@
     {
       "id": "mwx7unf2sr3rp",
       "title": "Còn dụng cụ KHX",
-      "html": "\n<h1 style=\"text-align:center\"><br></h1>",
+      "html": "<p><br></p>",
       "parentId": "mwx7unf2viitb",
       "icon": "",
       "createdAt": "2026-11-26T07:13:36.014Z",
-      "updatedAt": "2026-11-26T08:58:50.215Z"
+      "updatedAt": "2026-11-26T08:58:51.097Z"
     }
   ]
 }
