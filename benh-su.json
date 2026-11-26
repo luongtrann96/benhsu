@@ -1,7 +1,7 @@
 {
   "app": "phan-mem-benh-su",
   "version": 1,
-  "savedAt": "2026-11-26T06:53:23.615Z",
+  "savedAt": "2026-11-26T06:53:27.438Z",
   "settings": {
     "background": "goodnote"
   },
@@ -163,11 +163,11 @@
     {
       "id": "mww5jm5e4ct3c",
       "title": "Đa chấn thương",
-      "html": "\n<h1 style=\"text-align:center\">BỆNH ÁN NGOẠI KHOA</h1>\n<p style=\"text-align:center\"><b>Đa chấn thương</b></p>\n<h2>I. HÀNH CHÍNH</h2>\n<p>Họ và tên: …………………… &nbsp;&nbsp; Tuổi: …… &nbsp;&nbsp; Giới: ……</p>\n<p>Nghề nghiệp: …………………… &nbsp;&nbsp; Địa chỉ: ……………………</p>\n<p>Ngày giờ vào viện: …………………… &nbsp;&nbsp; Khoa: ……………………</p>\n<h2>II. LÝ DO VÀO VIỆN</h2>\n<p>……………………</p>\n<h2>III. BỆNH SỬ</h2>\n<p>Khởi phát: ……………………</p>\n<p>Diễn biến: ……………………</p>\n<p>Điều trị trước khi vào viện: ……………………</p>\n<p>Tình trạng lúc vào viện: ……………………</p>\n<h2>IV. TIỀN SỬ</h2>\n<p><b>1. Bản thân:</b> ……………………</p>\n<p><b>2. Gia đình:</b> ……………………</p>\n<h2>V. KHÁM LÂM SÀNG</h2>\n<p><b>1. Toàn thân:</b> Tỉnh, tiếp xúc tốt. Mạch … l/p, nhiệt độ … °C, huyết áp …/… mmHg, nhịp thở … l/p, SpO₂ … %.</p>\n<p><b>2. Khám bộ phận:</b></p>\n<ul><li>Bụng: ……………………</li><li>Tim mạch: ……………………</li><li>Hô hấp: ……………………</li><li>Các cơ quan khác: ……………………</li></ul>\n<h2>VI. CẬN LÂM SÀNG</h2>\n<p>……………………</p>\n<h2>VII. TÓM TẮT – CHẨN ĐOÁN</h2>\n<p><b>Tóm tắt bệnh án:</b> ……………………</p>\n<p><b>Chẩn đoán sơ bộ:</b> ……………………</p>\n<p><b>Hướng xử trí:</b> ……………………</p>",
+      "html": "",
       "parentId": "mww5jm5ezsf4d",
       "icon": "",
       "createdAt": "2026-11-25T13:21:15.746Z",
-      "updatedAt": "2026-11-25T15:43:31.252Z"
+      "updatedAt": "2026-11-26T06:53:24.523Z"
     },
     {
       "id": "mww5jm5evv4fc",
