@@ -396,9 +396,9 @@ const TPL_BENHAN = `
 <p><b>Hướng xử trí:</b> ……………………</p>`;
 
 /* ---------- Trạng thái ---------- */
-let state = { docs: [], activeId: null, savedAt: 0 };
+let state = { docs: [], activeId: null, savedAt: 0, deleted: {} };
 let locked = true, wiped = false;   // locked: đang khóa bằng mật khẩu; wiped: đã xóa dữ liệu (quên mật khẩu)
-let freshLocal = false, sessionPw = '', syncBlob = null, syncBlobP = null;   // freshLocal: máy mới, chưa có dữ liệu riêng; sessionPw: mật khẩu vừa nhập (chỉ trong bộ nhớ)
+let freshLocal = false, sessionPw = '', syncBlob = null, syncBlobP = null, editVer = 0, lastPull = 0;   // freshLocal: máy mới, chưa có dữ liệu riêng; sessionPw: mật khẩu vừa nhập (chỉ trong bộ nhớ)
 let ui = { bg: 'goodnote', side: true, closed: {} };
 let fileHandle = null, fileState = 'none';   // none | needperm | ok
 let saveTimer = null, dirtyFile = false, lastRange = null;
@@ -433,9 +433,10 @@ function normalize(data) {
   list.forEach(d => { const seen = new Set([d.id]); let p = d; while (p && p.parentId) { if (seen.has(p.parentId)) { d.parentId = null; break; } seen.add(p.parentId); p = map.get(p.parentId); } });
   return list;
 }
+function tombOf(x) { const o = {}; if (x && typeof x === 'object' && !Array.isArray(x)) Object.keys(x).forEach(k => { if (typeof x[k] === 'string') o[k] = x[k]; }); return o; }
 function exportData() {
   return { app: APP_ID, version: 1, savedAt: now(), settings: { background: ui.bg },
-           activeId: state.activeId, documents: state.docs };
+           activeId: state.activeId, deleted: state.deleted, documents: state.docs };
 }
 
 /* ---------- Lưu trữ ---------- */
@@ -454,12 +455,12 @@ async function writeFile() {
   await w.close(); dirtyFile = false; return true;
 }
 function schedulePersist() {
-  setSaveText('Đang lưu…'); dirtyFile = true; freshLocal = false;
+  setSaveText('Đang lưu…'); dirtyFile = true; freshLocal = false; editVer++;
   if (ghOn()) { ghMeta.dirty = true; ghSaveMeta(); }
   clearTimeout(saveTimer);
   saveTimer = setTimeout(async () => {
     const ok = saveLocal();
-    if (ghOn()) { clearTimeout(ghTimer); setGh('pending'); ghTimer = setTimeout(ghPush, 1800); }
+    if (ghOn()) { clearTimeout(ghTimer); setGh('pending'); ghTimer = setTimeout(ghPush, 1000); }
     if (fileHandle && fileState === 'ok') {
       try { await writeFile(); setSaveText('Đã lưu vào ' + fileHandle.name); }
       catch (e) { setSaveText('Lỗi ghi tệp'); fileState = 'needperm'; renderChip(); }
@@ -525,7 +526,7 @@ async function reconnect() {
 }
 function loadLibrary(data) {
   const docs = normalize(data);
-  state.docs = docs.length ? docs : [];
+  state.docs = docs.length ? docs : []; state.deleted = tombOf(data.deleted);
   if (!state.docs.length) newDoc(TPL_BLANK);
   state.activeId = state.docs.some(d => d.id === data.activeId) ? data.activeId : state.docs[0].id;
   if (data.settings && data.settings.background) { ui.bg = data.settings.background; applyBg(); saveUI(); }
@@ -566,7 +567,7 @@ $('#fileIn').addEventListener('change', e => {
 function syncFromSheet() {
   if (locked) return;
   const d = cur(); if (!d) return;
-  d.html = sheet.innerHTML; d.updatedAt = now();
+  if (d.html !== sheet.innerHTML) { d.html = sheet.innerHTML; d.updatedAt = now(); }
 }
 function renderTitle() { $('#docTitle').value = cur() ? cur().title : ''; document.title = (cur() ? cur().title + ' – ' : '') + 'Soạn thảo Bệnh sử'; }
 /* ----- Cây thẻ (giống Tab của Google Docs) ----- */
@@ -585,7 +586,7 @@ const SEED = [['NGOẠI KHOA', '', [
 ]]];
 function tplFor(name) { return TPL_BENHAN.replace('BỆNH ÁN NGOẠI KHOA</h1>', 'BỆNH ÁN NGOẠI KHOA</h1>\n' + (name ? '<p style="text-align:center"><b>' + esc(name) + '</b></p>' : '')); }
 function seedDocs() {
-  state = { docs: [], activeId: null, savedAt: 0 }; let first = null;
+  state = { docs: [], activeId: null, savedAt: 0, deleted: {} }; let first = null;
   const walk = (arr, pid) => arr.forEach(it => {
     if (typeof it === 'string') { const d = newDoc(tplFor(it), it, { parentId: pid }); first = first || d; }
     else { const d = newDoc('<h1>' + esc(it[0]) + '</h1><p><br></p>', it[0], { parentId: pid, icon: it[1] }); walk(it[2], d.id); }
@@ -648,7 +649,7 @@ function renameInline(id) {
 }
 function moveNode(id, tid, pos) {
   const n = byId(id), t = byId(tid); if (!n || !t || id === tid || isDesc(tid, id)) return;
-  syncFromSheet(); state.docs = state.docs.filter(d => d !== n);
+  syncFromSheet(); n.updatedAt = now(); state.docs = state.docs.filter(d => d !== n);
   if (pos === 'inside') { n.parentId = t.id; delete ui.closed[t.id]; saveUI(); state.docs.push(n); }
   else { n.parentId = t.parentId || null; const i = state.docs.indexOf(t); state.docs.splice(pos === 'before' ? i : i + 1, 0, n); }
   renderList(); schedulePersist();
@@ -660,12 +661,12 @@ function shiftTab(id, dir) {
 }
 function indentTab(id) {
   const n = byId(id), sib = kids(n.parentId), i = sib.indexOf(n); if (i < 1) return;
-  const p = sib[i - 1]; state.docs = state.docs.filter(d => d !== n); n.parentId = p.id; state.docs.push(n); delete ui.closed[p.id]; saveUI();
+  const p = sib[i - 1]; n.updatedAt = now(); state.docs = state.docs.filter(d => d !== n); n.parentId = p.id; state.docs.push(n); delete ui.closed[p.id]; saveUI();
   renderList(); schedulePersist();
 }
 function outdentTab(id) {
   const n = byId(id), par = n && byId(n.parentId); if (!par) return;
-  state.docs = state.docs.filter(d => d !== n); n.parentId = par.parentId || null; state.docs.splice(state.docs.indexOf(par) + 1, 0, n);
+  n.updatedAt = now(); state.docs = state.docs.filter(d => d !== n); n.parentId = par.parentId || null; state.docs.splice(state.docs.indexOf(par) + 1, 0, n);
   renderList(); schedulePersist();
 }
 /* Menu chuột phải + chọn biểu tượng */
@@ -730,6 +731,7 @@ function renderAll() {
   const d = cur();
   sheet.innerHTML = d ? sanitize(d.html) : TPL_BLANK;
   if (!sheet.textContent.trim() && !sheet.querySelector('img,table,hr')) sheet.innerHTML = TPL_BLANK;
+  if (d) d.html = sheet.innerHTML;
   renderTitle(); renderList(); renderOutline(); updateCounts();
 }
 function selectDoc(id) {
@@ -752,6 +754,7 @@ function delDoc(id) {
   const sub = subtree(id), ids = new Set([id, ...sub.map(x => x.id)]);
   if (!confirm('Xóa thẻ "' + d.title + '"' + (sub.length ? ' cùng ' + sub.length + ' thẻ con' : '') + '?\nHành động này không thể hoàn tác.')) return;
   const parent = d.parentId;
+  ids.forEach(i => { state.deleted[i] = now(); });
   state.docs = state.docs.filter(x => !ids.has(x.id));
   if (!state.docs.length) newDoc(TPL_BLANK);
   if (ids.has(state.activeId)) state.activeId = parent && byId(parent) ? parent : state.docs[0].id;
@@ -972,40 +975,87 @@ function renderGh() {
   else { c.classList.add('ok'); const t = ghLastOk ? new Date(ghLastOk).toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' }) : ''; s.textContent = repo + (t ? ' · ' + t : ''); c.title = 'Đã đồng bộ lên ' + repo + '/' + gh.path; }
 }
 async function ghApply(rem) {
-  loadLibrary(JSON.parse(rem.text)); freshLocal = false;
+  loadLibrary(JSON.parse(rem.text)); freshLocal = false; ghMeta.syncedAt = now();
   ghMeta.sha = rem.sha; ghMeta.dirty = false; ghSaveMeta(); setGh('ok');
+}
+function stampNow() { return new Date().toLocaleString('vi-VN', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' }); }
+/* Gộp dữ liệu GitHub vào dữ liệu máy này theo từng thẻ (thẻ nào sửa sau thì thắng). Nếu cả hai bên cùng sửa một thẻ kể từ lần đồng bộ trước,
+   bản thua được giữ lại thành thẻ "(bản xung đột …)" để không mất chữ nào. Thẻ đã xóa được nhớ (dấu xóa) để không bị hồi sinh. */
+function mergeRemote(data) {
+  syncFromSheet();
+  const rem = normalize(data), loc = state.docs, tomb = tombOf(data.deleted);
+  Object.keys(state.deleted).forEach(k => { if (!tomb[k] || tomb[k] < state.deleted[k]) tomb[k] = state.deleted[k]; });
+  const since = ghMeta.syncedAt || '';
+  const lm = new Map(loc.map(d => [d.id, d])), rm = new Map(rem.map(d => [d.id, d]));
+  const keep = d => !(tomb[d.id] && tomb[d.id] >= d.updatedAt);
+  const out = [], extra = [];
+  rem.forEach(r => {
+    const l = lm.get(r.id);
+    if (!l) { if (keep(r)) out.push(r); return; }
+    const w = l.updatedAt > r.updatedAt ? l : r, lo = w === l ? r : l;
+    if (!keep(w)) return;
+    if (sanitize(l.html) !== r.html && l.updatedAt > since && r.updatedAt > since)
+      extra.push(Object.assign({}, lo, { id: uid(), title: lo.title + ' (bản xung đột ' + stampNow() + ')', updatedAt: now() }));
+    out.push(w);
+  });
+  loc.forEach(l => { if (!rm.has(l.id) && keep(l)) out.push(l); });
+  state.docs = normalize({ documents: out.concat(extra) }); state.deleted = tomb;
+  if (!state.docs.length) newDoc(TPL_BLANK);
+  if (!state.docs.some(d => d.id === state.activeId)) state.activeId = state.docs[0].id;
+  renderAll(); saveLocal();
+  return extra.length;
 }
 async function ghPush() {
   if (!ghOn()) return;
   if (ghBusy) { ghAgain = true; return; }
   ghBusy = true; setGh('syncing');
+  const ver = editVer; let merged = false, conf = 0;
   try {
-    try { ghMeta.sha = await ghPut(ghMeta.sha); }
-    catch (e) {
-      if (e.status !== 409 && e.status !== 422) throw e;
-      const rem = await ghGet();
-      if (rem && rem.sha !== ghMeta.sha) {
-        if (!confirm('Tệp trên GitHub đã được thay đổi từ nơi khác (máy/thiết bị khác).\n\nOK = ghi đè bằng bản đang soạn trên máy này\nHủy = tải bản từ GitHub về (bỏ thay đổi chưa đồng bộ)')) { await ghApply(rem); return; }
+    syncFromSheet();
+    for (let i = 0; ; i++) {
+      try { ghMeta.sha = await ghPut(ghMeta.sha); break; }
+      catch (e) {
+        if ((e.status !== 409 && e.status !== 422) || i >= 2) throw e;
+        const rem = await ghGet();   // nơi khác đã sửa: gộp rồi đẩy lại, không ghi đè
+        if (rem) { conf += mergeRemote(JSON.parse(rem.text)); merged = true; ghMeta.sha = rem.sha; } else ghMeta.sha = null;
       }
-      ghMeta.sha = await ghPut(rem ? rem.sha : null);
     }
-    ghMeta.dirty = false; ghSaveMeta(); setGh('ok');
+    if (merged) toast('Đã gộp thay đổi từ trình duyệt khác' + (conf ? ' — có thẻ "(bản xung đột …)" cần xem lại' : ''), 5000);
+    if (editVer === ver) ghMeta.dirty = false;
+    ghMeta.syncedAt = now(); ghSaveMeta(); setGh('ok');
   } catch (e) { setGh('err', e.message); toast('Đồng bộ GitHub lỗi: ' + e.message); }
   finally { ghBusy = false; if (ghAgain) { ghAgain = false; ghPush(); } }
 }
-async function ghSync(manual) {
+async function ghSync(manual, quiet) {
   if (!ghOn()) return renderGh();
   setGh('syncing');
   try {
     const rem = await ghGet();
     if (!rem) { ghMeta.sha = null; ghMeta.dirty = true; await ghPush(); if (manual && ghStat === 'ok') toast('Đã tạo ' + gh.path + ' trên GitHub'); return; }
     if (rem.sha === ghMeta.sha) { if (ghMeta.dirty) await ghPush(); else setGh('ok'); if (manual && ghStat === 'ok') toast('Đã đồng bộ'); return; }
-    const localDirty = !freshLocal && (ghMeta.dirty || !ghMeta.sha);   // máy mới chưa có dữ liệu riêng: tự tải từ GitHub, không hỏi
-    if (!localDirty) { await ghApply(rem); toast('Đã tải bản mới từ GitHub'); return; }
-    if (confirm('Trên GitHub đã có dữ liệu (' + gh.path + ').\n\nOK = tải dữ liệu từ GitHub về (thay thế dữ liệu trên máy này)\nHủy = giữ dữ liệu trên máy này và ghi đè lên GitHub')) { await ghApply(rem); toast('Đã tải từ GitHub'); }
-    else { ghMeta.sha = rem.sha; ghMeta.dirty = true; await ghPush(); }
-  } catch (e) { setGh('err', e.message); toast('Đồng bộ GitHub lỗi: ' + e.message); }
+    if (freshLocal) { await ghApply(rem); toast('Đã tải dữ liệu từ GitHub'); return; }   // máy mới: lấy dữ liệu GitHub
+    if (!ghMeta.dirty && ghMeta.sha) { await ghApply(rem); toast('Đã tải bản mới từ GitHub'); return; }   // máy này không có gì chưa đẩy: chỉ cần cập nhật
+    const conf = mergeRemote(JSON.parse(rem.text));   // hai phía cùng có thay đổi: gộp, không hỏi ghi đè
+    ghMeta.sha = rem.sha; ghMeta.dirty = true; await ghPush();
+    if (ghStat === 'ok') toast('Đã gộp dữ liệu với GitHub' + (conf ? ' — có thẻ "(bản xung đột …)" cần xem lại' : ''), 5000);
+  } catch (e) { setGh('err', e.message); if (!quiet) toast('Đồng bộ GitHub lỗi: ' + e.message); }
 }
+/* Đẩy ngay khi rời trang/đổi cửa sổ; tự kéo bản mới khi quay lại (chỉ khi máy này không có thay đổi chưa đẩy) */
+function flushNow() {
+  if (locked || wiped || !ghOn() || !ghMeta.dirty) return;
+  clearTimeout(saveTimer); syncFromSheet(); saveLocal();
+  if (fileHandle && fileState === 'ok' && dirtyFile) writeFile().catch(() => {});
+  clearTimeout(ghTimer); ghPush();
+}
+function autoPull() {
+  if (locked || wiped || !ghOn() || ghBusy || ghMeta.dirty || Date.now() - lastPull < 15000) return;
+  lastPull = Date.now(); ghSync(false, true);
+}
+window.addEventListener('blur', flushNow);
+window.addEventListener('pagehide', flushNow);
+window.addEventListener('focus', autoPull);
+document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') flushNow(); else autoPull(); });
+setInterval(() => { if (document.visibilityState === 'visible') autoPull(); }, 60000);
 function ghOpenModal() {
   $('#ghOwner').value = gh.owner; $('#ghRepo').value = gh.repo; $('#ghBranch').value = gh.branch || 'main';
   $('#ghPath').value = gh.path || 'benh-su.json'; $('#ghToken').value = gh.token;
@@ -1232,7 +1282,7 @@ async function init() {
   if (!ui.closed || typeof ui.closed !== 'object') ui.closed = {};
   applyBg(); applySide();
   let loaded = false;
-  try { const raw = localStorage.getItem(LS_KEY); if (raw) { const data = JSON.parse(raw); state.docs = normalize(data); state.activeId = data.activeId; state.savedAt = Date.parse(data.savedAt) || 0; loaded = state.docs.length > 0; } } catch (e) {}
+  try { const raw = localStorage.getItem(LS_KEY); if (raw) { const data = JSON.parse(raw); state.docs = normalize(data); state.activeId = data.activeId; state.savedAt = Date.parse(data.savedAt) || 0; state.deleted = tombOf(data.deleted); loaded = state.docs.length > 0; } } catch (e) {}
   if (!loaded) { seedDocs(); freshLocal = true; }
   if (!cur()) state.activeId = state.docs[0].id;
   renderAll(); renderChip(); setSaveText(loaded ? 'Đã tải từ trình duyệt' : 'Chào mừng!');
