@@ -1,11 +1,11 @@
 {
   "app": "phan-mem-benh-su",
   "version": 1,
-  "savedAt": "2026-11-26T06:57:47.193Z",
+  "savedAt": "2026-11-26T06:57:55.562Z",
   "settings": {
     "background": "goodnote"
   },
-  "activeId": "mwx79vfrp6s4q",
+  "activeId": "mwx7afkws2q3s",
   "documents": [
     {
       "id": "mww5jm5bja3r2",
@@ -189,12 +189,12 @@
     },
     {
       "id": "mwx79vfrp6s4q",
-      "title": "5.",
+      "title": "5. NHIỄM TRÙNG",
       "html": "<p><br></p>",
       "parentId": null,
       "icon": "",
       "createdAt": "2026-11-26T06:57:26.631Z",
-      "updatedAt": "2026-11-26T06:57:44.449Z"
+      "updatedAt": "2026-11-26T06:57:52.736Z"
     },
     {
       "id": "mwx76e2wrey7n",
@@ -222,6 +222,15 @@
       "icon": "",
       "createdAt": "2026-11-26T06:57:01.376Z",
       "updatedAt": "2026-11-26T06:57:26.631Z"
+    },
+    {
+      "id": "mwx7afkws2q3s",
+      "title": "Thẻ mới",
+      "html": "<p><br></p>",
+      "parentId": "mwx79vfrp6s4q",
+      "icon": "",
+      "createdAt": "2026-11-26T06:57:52.736Z",
+      "updatedAt": "2026-11-26T06:57:52.736Z"
     }
   ]
 }
