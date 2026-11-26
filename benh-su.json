@@ -1,7 +1,7 @@
 {
   "app": "phan-mem-benh-su",
   "version": 1,
-  "savedAt": "2026-11-26T07:54:41.790Z",
+  "savedAt": "2026-11-26T07:54:50.359Z",
   "settings": {
     "background": "goodnote"
   },
@@ -32,7 +32,7 @@
       "parentId": "mwx7unf25qn2c",
       "icon": "",
       "createdAt": "2026-11-26T07:13:36.014Z",
-      "updatedAt": "2026-11-26T07:13:41.288Z"
+      "updatedAt": "2026-11-26T07:54:47.544Z"
     },
     {
       "id": "mwx7unf20dfct",
@@ -41,7 +41,7 @@
       "parentId": "mwx7unf25qn2c",
       "icon": "",
       "createdAt": "2026-11-26T07:13:36.014Z",
-      "updatedAt": "2026-11-26T07:13:41.991Z"
+      "updatedAt": "2026-11-26T07:54:48.048Z"
     },
     {
       "id": "mwx7unf28q48b",
