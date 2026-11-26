@@ -1,7 +1,7 @@
 {
   "app": "phan-mem-benh-su",
   "version": 1,
-  "savedAt": "2026-11-26T08:57:08.579Z",
+  "savedAt": "2026-11-26T08:57:11.030Z",
   "settings": {
     "background": "goodnote"
   },
@@ -101,11 +101,11 @@
     {
       "id": "mwx7unf2ythzk",
       "title": "Viêm bàng quang",
-      "html": "",
+      "html": "<p><br></p>",
       "parentId": "mwx7unf2c9wu2",
       "icon": "",
       "createdAt": "2026-11-26T07:13:36.014Z",
-      "updatedAt": "2026-11-26T08:57:08.569Z"
+      "updatedAt": "2026-11-26T08:57:09.346Z"
     },
     {
       "id": "mwx7unf2qqzjk",
