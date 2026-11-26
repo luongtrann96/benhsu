@@ -1,7 +1,7 @@
 {
   "app": "phan-mem-benh-su",
   "version": 1,
-  "savedAt": "2026-11-26T09:06:41.919Z",
+  "savedAt": "2026-11-26T09:06:44.508Z",
   "settings": {
     "background": "goodnote"
   },
@@ -32,11 +32,11 @@
     {
       "id": "mwx7unf18kffd",
       "title": "NGOẠI KHOA",
-      "html": "<h1><br></h1><p><br></p>",
+      "html": "<h1><span style=\"font-size: xxx-large;\">d</span></h1><p><br></p>",
       "parentId": null,
       "icon": "",
       "createdAt": "2026-11-26T07:13:36.013Z",
-      "updatedAt": "2026-11-26T09:06:40.059Z"
+      "updatedAt": "2026-11-26T09:06:42.993Z"
     },
     {
       "id": "mwx7unf25qn2c",
