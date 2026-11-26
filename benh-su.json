@@ -1,11 +1,11 @@
 {
   "app": "phan-mem-benh-su",
   "version": 1,
-  "savedAt": "2026-11-26T07:32:26.994Z",
+  "savedAt": "2026-11-26T07:32:35.610Z",
   "settings": {
     "background": "goodnote"
   },
-  "activeId": "mwx7vlln3e41k",
+  "activeId": "mwx7vlln1h91s",
   "documents": [
     {
       "id": "mwx7vlln3n6mv",
@@ -32,7 +32,7 @@
       "parentId": "mwx7vllnjzaxi",
       "icon": "",
       "createdAt": "2026-11-26T07:14:20.315Z",
-      "updatedAt": "2026-11-26T07:14:49.080Z"
+      "updatedAt": "2026-11-26T07:32:34.164Z"
     },
     {
       "id": "mwx7vllnwpvin",
@@ -41,7 +41,7 @@
       "parentId": "mwx7vllnjzaxi",
       "icon": "",
       "createdAt": "2026-11-26T07:14:20.315Z",
-      "updatedAt": "2026-11-26T07:32:22.161Z"
+      "updatedAt": "2026-11-26T07:32:34.640Z"
     },
     {
       "id": "mwx7vlln5c62k",
@@ -59,7 +59,7 @@
       "parentId": "mwx7vllnjzaxi",
       "icon": "",
       "createdAt": "2026-11-26T07:14:20.315Z",
-      "updatedAt": "2026-11-26T07:14:49.632Z"
+      "updatedAt": "2026-11-26T07:32:29.911Z"
     },
     {
       "id": "mwx7vllnbazpt",
@@ -77,7 +77,7 @@
       "parentId": "mwx7vlln3n6mv",
       "icon": "🇻🇳",
       "createdAt": "2026-11-26T07:14:20.315Z",
-      "updatedAt": "2026-11-26T07:32:21.497Z"
+      "updatedAt": "2026-11-26T07:32:34.914Z"
     },
     {
       "id": "mwx7vllnxhhrf",
@@ -95,7 +95,7 @@
       "parentId": "mwx7vllnnizkl",
       "icon": "",
       "createdAt": "2026-11-26T07:14:20.315Z",
-      "updatedAt": "2026-11-26T07:32:24.663Z"
+      "updatedAt": "2026-11-26T07:32:30.223Z"
     },
     {
       "id": "mwx7vlln7o6wq",
@@ -104,16 +104,7 @@
       "parentId": "mwx7vllnnizkl",
       "icon": "",
       "createdAt": "2026-11-26T07:14:20.315Z",
-      "updatedAt": "2026-11-26T07:32:06.672Z"
-    },
-    {
-      "id": "mwx7vlln88fr9",
-      "title": "Tiền liệt tuyến",
-      "html": "\n<h1 style=\"text-align:center\">BỆNH ÁN NGOẠI KHOA</h1>\n<p style=\"text-align:center\"><b>Tiền liệt tuyến</b></p>\n<h2>I. HÀNH CHÍNH</h2>\n<p>Họ và tên: …………………… &nbsp;&nbsp; Tuổi: …… &nbsp;&nbsp; Giới: ……</p>\n<p>Nghề nghiệp: …………………… &nbsp;&nbsp; Địa chỉ: ……………………</p>\n<p>Ngày giờ vào viện: …………………… &nbsp;&nbsp; Khoa: ……………………</p>\n<h2>II. LÝ DO VÀO VIỆN</h2>\n<p>……………………</p>\n<h2>III. BỆNH SỬ</h2>\n<p>Khởi phát: ……………………</p>\n<p>Diễn biến: ……………………</p>\n<p>Điều trị trước khi vào viện: ……………………</p>\n<p>Tình trạng lúc vào viện: ……………………</p>\n<h2>IV. TIỀN SỬ</h2>\n<p><b>1. Bản thân:</b> ……………………</p>\n<p><b>2. Gia đình:</b> ……………………</p>\n<h2>V. KHÁM LÂM SÀNG</h2>\n<p><b>1. Toàn thân:</b> Tỉnh, tiếp xúc tốt. Mạch … l/p, nhiệt độ … °C, huyết áp …/… mmHg, nhịp thở … l/p, SpO₂ … %.</p>\n<p><b>2. Khám bộ phận:</b></p>\n<ul><li>Bụng: ……………………</li><li>Tim mạch: ……………………</li><li>Hô hấp: ……………………</li><li>Các cơ quan khác: ……………………</li></ul>\n<h2>VI. CẬN LÂM SÀNG</h2>\n<p>……………………</p>\n<h2>VII. TÓM TẮT – CHẨN ĐOÁN</h2>\n<p><b>Tóm tắt bệnh án:</b> ……………………</p>\n<p><b>Chẩn đoán sơ bộ:</b> ……………………</p>\n<p><b>Hướng xử trí:</b> ……………………</p>",
-      "parentId": "mwx7vllnnizkl",
-      "icon": "",
-      "createdAt": "2026-11-26T07:14:20.315Z",
-      "updatedAt": "2026-11-26T07:14:20.315Z"
+      "updatedAt": "2026-11-26T07:32:35.163Z"
     },
     {
       "id": "mwx7vllnv4zvd",
@@ -125,13 +116,22 @@
       "updatedAt": "2026-11-26T07:32:06.223Z"
     },
     {
+      "id": "mwx7vlln88fr9",
+      "title": "Tiền liệt tuyến",
+      "html": "\n<h1 style=\"text-align:center\">BỆNH ÁN NGOẠI KHOA</h1>\n<p style=\"text-align:center\"><b>Tiền liệt tuyến</b></p>\n<h2>I. HÀNH CHÍNH</h2>\n<p>Họ và tên: …………………… &nbsp;&nbsp; Tuổi: …… &nbsp;&nbsp; Giới: ……</p>\n<p>Nghề nghiệp: …………………… &nbsp;&nbsp; Địa chỉ: ……………………</p>\n<p>Ngày giờ vào viện: …………………… &nbsp;&nbsp; Khoa: ……………………</p>\n<h2>II. LÝ DO VÀO VIỆN</h2>\n<p>……………………</p>\n<h2>III. BỆNH SỬ</h2>\n<p>Khởi phát: ……………………</p>\n<p>Diễn biến: ……………………</p>\n<p>Điều trị trước khi vào viện: ……………………</p>\n<p>Tình trạng lúc vào viện: ……………………</p>\n<h2>IV. TIỀN SỬ</h2>\n<p><b>1. Bản thân:</b> ……………………</p>\n<p><b>2. Gia đình:</b> ……………………</p>\n<h2>V. KHÁM LÂM SÀNG</h2>\n<p><b>1. Toàn thân:</b> Tỉnh, tiếp xúc tốt. Mạch … l/p, nhiệt độ … °C, huyết áp …/… mmHg, nhịp thở … l/p, SpO₂ … %.</p>\n<p><b>2. Khám bộ phận:</b></p>\n<ul><li>Bụng: ……………………</li><li>Tim mạch: ……………………</li><li>Hô hấp: ……………………</li><li>Các cơ quan khác: ……………………</li></ul>\n<h2>VI. CẬN LÂM SÀNG</h2>\n<p>……………………</p>\n<h2>VII. TÓM TẮT – CHẨN ĐOÁN</h2>\n<p><b>Tóm tắt bệnh án:</b> ……………………</p>\n<p><b>Chẩn đoán sơ bộ:</b> ……………………</p>\n<p><b>Hướng xử trí:</b> ……………………</p>",
+      "parentId": "mwx7vllnnizkl",
+      "icon": "",
+      "createdAt": "2026-11-26T07:14:20.315Z",
+      "updatedAt": "2026-11-26T07:32:35.424Z"
+    },
+    {
       "id": "mwx7vllns9o9r",
       "title": "Thoát vị bẹn",
       "html": "\n<h1 style=\"text-align:center\">BỆNH ÁN NGOẠI KHOA</h1>\n<p style=\"text-align:center\"><b>Thoát vị bẹn</b></p>\n<h2>I. HÀNH CHÍNH</h2>\n<p>Họ và tên: …………………… &nbsp;&nbsp; Tuổi: …… &nbsp;&nbsp; Giới: ……</p>\n<p>Nghề nghiệp: …………………… &nbsp;&nbsp; Địa chỉ: ……………………</p>\n<p>Ngày giờ vào viện: …………………… &nbsp;&nbsp; Khoa: ……………………</p>\n<h2>II. LÝ DO VÀO VIỆN</h2>\n<p>……………………</p>\n<h2>III. BỆNH SỬ</h2>\n<p>Khởi phát: ……………………</p>\n<p>Diễn biến: ……………………</p>\n<p>Điều trị trước khi vào viện: ……………………</p>\n<p>Tình trạng lúc vào viện: ……………………</p>\n<h2>IV. TIỀN SỬ</h2>\n<p><b>1. Bản thân:</b> ……………………</p>\n<p><b>2. Gia đình:</b> ……………………</p>\n<h2>V. KHÁM LÂM SÀNG</h2>\n<p><b>1. Toàn thân:</b> Tỉnh, tiếp xúc tốt. Mạch … l/p, nhiệt độ … °C, huyết áp …/… mmHg, nhịp thở … l/p, SpO₂ … %.</p>\n<p><b>2. Khám bộ phận:</b></p>\n<ul><li>Bụng: ……………………</li><li>Tim mạch: ……………………</li><li>Hô hấp: ……………………</li><li>Các cơ quan khác: ……………………</li></ul>\n<h2>VI. CẬN LÂM SÀNG</h2>\n<p>……………………</p>\n<h2>VII. TÓM TẮT – CHẨN ĐOÁN</h2>\n<p><b>Tóm tắt bệnh án:</b> ……………………</p>\n<p><b>Chẩn đoán sơ bộ:</b> ……………………</p>\n<p><b>Hướng xử trí:</b> ……………………</p>",
       "parentId": "mwx7vllnnizkl",
       "icon": "",
       "createdAt": "2026-11-26T07:14:20.315Z",
-      "updatedAt": "2026-11-26T07:14:20.315Z"
+      "updatedAt": "2026-11-26T07:32:33.839Z"
     },
     {
       "id": "mwx7vllntk69g",
