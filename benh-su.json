@@ -1,7 +1,7 @@
 {
   "app": "phan-mem-benh-su",
   "version": 1,
-  "savedAt": "2026-11-26T08:58:28.030Z",
+  "savedAt": "2026-11-26T08:58:30.076Z",
   "settings": {
     "background": "goodnote"
   },
@@ -175,11 +175,11 @@
     {
       "id": "mwx7unf2ilrz7",
       "title": "Gãy xương đòn",
-      "html": "",
+      "html": "<p><br></p>",
       "parentId": "mwx7unf2viitb",
       "icon": "",
       "createdAt": "2026-11-26T07:13:36.014Z",
-      "updatedAt": "2026-11-26T08:58:27.697Z"
+      "updatedAt": "2026-11-26T08:58:28.735Z"
     },
     {
       "id": "mwx7unf2vvlpl",
