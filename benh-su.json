@@ -1,11 +1,11 @@
 {
   "app": "phan-mem-benh-su",
   "version": 1,
-  "savedAt": "2026-11-26T09:05:28.692Z",
+  "savedAt": "2026-11-26T09:05:41.458Z",
   "settings": {
     "background": "goodnote"
   },
-  "activeId": "mwxbueced5hys",
+  "activeId": "mwxburmn93ptd",
   "deleted": {
     "mwx7vlln3n6mv": "2026-11-26T08:58:22.782Z",
     "mwx7vllnjzaxi": "2026-11-26T08:58:22.782Z",
@@ -271,6 +271,15 @@
       "icon": "",
       "createdAt": "2026-11-26T09:05:22.718Z",
       "updatedAt": "2026-11-26T09:05:27.169Z"
+    },
+    {
+      "id": "mwxburmn93ptd",
+      "title": "Thẻ mới",
+      "html": "<p><br></p>",
+      "parentId": "mwxbt8bbem13i",
+      "icon": "",
+      "createdAt": "2026-11-26T09:05:39.935Z",
+      "updatedAt": "2026-11-26T09:05:39.935Z"
     }
   ]
 }
