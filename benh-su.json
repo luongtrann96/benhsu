@@ -1,11 +1,11 @@
 {
   "app": "phan-mem-benh-su",
   "version": 1,
-  "savedAt": "2026-11-26T06:59:04.376Z",
+  "savedAt": "2026-11-26T06:59:13.560Z",
   "settings": {
     "background": "goodnote"
   },
-  "activeId": "mwx7bjqhpwp51",
+  "activeId": "mwx7c3vbzkgp5",
   "documents": [
     {
       "id": "mww5jm5bja3r2",
@@ -198,12 +198,12 @@
     },
     {
       "id": "mwx7bjqhpwp51",
-      "title": "6.",
+      "title": "6.U PHẦN MỀM",
       "html": "<p><br></p>",
       "parentId": null,
       "icon": "",
       "createdAt": "2026-11-26T06:58:44.777Z",
-      "updatedAt": "2026-11-26T06:59:01.634Z"
+      "updatedAt": "2026-11-26T06:59:10.871Z"
     },
     {
       "id": "mwx76e2wrey7n",
@@ -258,6 +258,15 @@
       "icon": "",
       "createdAt": "2026-11-26T06:58:33.136Z",
       "updatedAt": "2026-11-26T06:58:44.777Z"
+    },
+    {
+      "id": "mwx7c3vbzkgp5",
+      "title": "Thẻ mới",
+      "html": "<p><br></p>",
+      "parentId": "mwx7bjqhpwp51",
+      "icon": "",
+      "createdAt": "2026-11-26T06:59:10.871Z",
+      "updatedAt": "2026-11-26T06:59:10.871Z"
     }
   ]
 }
