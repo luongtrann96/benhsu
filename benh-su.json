@@ -1,12 +1,32 @@
 {
   "app": "phan-mem-benh-su",
   "version": 1,
-  "savedAt": "2026-11-26T08:58:18.918Z",
+  "savedAt": "2026-11-26T08:58:22.788Z",
   "settings": {
     "background": "goodnote"
   },
-  "activeId": "mwx7vlln3n6mv",
-  "deleted": {},
+  "activeId": "mwx7unf18kffd",
+  "deleted": {
+    "mwx7vlln3n6mv": "2026-11-26T08:58:22.782Z",
+    "mwx7vllnjzaxi": "2026-11-26T08:58:22.782Z",
+    "mwx7vlln21qwi": "2026-11-26T08:58:22.782Z",
+    "mwx7vllnwpvin": "2026-11-26T08:58:22.782Z",
+    "mwx7vlln5c62k": "2026-11-26T08:58:22.782Z",
+    "mwx7vlln3e41k": "2026-11-26T08:58:22.782Z",
+    "mwx7vllnbazpt": "2026-11-26T08:58:22.782Z",
+    "mwx7vllnnizkl": "2026-11-26T08:58:22.782Z",
+    "mwx7vllnxhhrf": "2026-11-26T08:58:22.782Z",
+    "mwx7vllnp3cts": "2026-11-26T08:58:22.782Z",
+    "mwx7vlln7o6wq": "2026-11-26T08:58:22.782Z",
+    "mwx7vllnv4zvd": "2026-11-26T08:58:22.782Z",
+    "mwx7vlln88fr9": "2026-11-26T08:58:22.782Z",
+    "mwx7vllns9o9r": "2026-11-26T08:58:22.782Z",
+    "mwx7vllntk69g": "2026-11-26T08:58:22.782Z",
+    "mwx7vlln1h91s": "2026-11-26T08:58:22.782Z",
+    "mwx7vllndzkqm": "2026-11-26T08:58:22.782Z",
+    "mwx7vlln3id68": "2026-11-26T08:58:22.782Z",
+    "mwx7vllnciag9": "2026-11-26T08:58:22.782Z"
+  },
   "documents": [
     {
       "id": "mwx7unf18kffd",
@@ -178,177 +198,6 @@
       "icon": "",
       "createdAt": "2026-11-26T07:13:36.014Z",
       "updatedAt": "2026-11-26T07:13:36.014Z"
-    },
-    {
-      "id": "mwx7vlln3n6mv",
-      "title": "NGOẠI KHOA",
-      "html": "<h1>NGOẠI KHOA</h1><p><br></p>",
-      "parentId": null,
-      "icon": "",
-      "createdAt": "2026-11-26T07:14:20.315Z",
-      "updatedAt": "2026-11-26T07:14:20.315Z"
-    },
-    {
-      "id": "mwx7vllnjzaxi",
-      "title": "1. TIÊU HOÁ",
-      "html": "<h1>1. TIÊU HOÁ</h1><p><br></p>",
-      "parentId": "mwx7vlln3n6mv",
-      "icon": "🇻🇳",
-      "createdAt": "2026-11-26T07:14:20.315Z",
-      "updatedAt": "2026-11-26T07:14:20.315Z"
-    },
-    {
-      "id": "mwx7vlln21qwi",
-      "title": "Viêm ruột thừa",
-      "html": "\n<h1 style=\"text-align:center\"><br></h1>",
-      "parentId": "mwx7vllnjzaxi",
-      "icon": "",
-      "createdAt": "2026-11-26T07:14:20.315Z",
-      "updatedAt": "2026-11-26T08:10:56.348Z"
-    },
-    {
-      "id": "mwx7vllnwpvin",
-      "title": "Tắc ruột",
-      "html": "\n<h1 style=\"text-align:center\">BỆNH ÁN NGOẠI KHOA</h1>\n<p style=\"text-align:center\"><b>Tắc ruột</b></p>\n<h2>I. HÀNH CHÍNH</h2>\n<p>Họ và tên: …………………… &nbsp;&nbsp; Tuổi: …… &nbsp;&nbsp; Giới: ……</p>\n<p>Nghề nghiệp: …………………… &nbsp;&nbsp; Địa chỉ: ……………………</p>\n<p>Ngày giờ vào viện: …………………… &nbsp;&nbsp; Khoa: ……………………</p>\n<h2>II. LÝ DO VÀO VIỆN</h2>\n<p>……………………</p>\n<h2>III. BỆNH SỬ</h2>\n<p>Khởi phát: ……………………</p>\n<p>Diễn biến: ……………………</p>\n<p>Điều trị trước khi vào viện: ……………………</p>\n<p>Tình trạng lúc vào viện: ……………………</p>\n<h2>IV. TIỀN SỬ</h2>\n<p><b>1. Bản thân:</b> ……………………</p>\n<p><b>2. Gia đình:</b> ……………………</p>\n<h2>V. KHÁM LÂM SÀNG</h2>\n<p><b>1. Toàn thân:</b> Tỉnh, tiếp xúc tốt. Mạch … l/p, nhiệt độ … °C, huyết áp …/… mmHg, nhịp thở … l/p, SpO₂ … %.</p>\n<p><b>2. Khám bộ phận:</b></p>\n<ul><li>Bụng: ……………………</li><li>Tim mạch: ……………………</li><li>Hô hấp: ……………………</li><li>Các cơ quan khác: ……………………</li></ul>\n<h2>VI. CẬN LÂM SÀNG</h2>\n<p>……………………</p>\n<h2>VII. TÓM TẮT – CHẨN ĐOÁN</h2>\n<p><b>Tóm tắt bệnh án:</b> ……………………</p>\n<p><b>Chẩn đoán sơ bộ:</b> ……………………</p>\n<p><b>Hướng xử trí:</b> ……………………</p>",
-      "parentId": "mwx7vllnjzaxi",
-      "icon": "",
-      "createdAt": "2026-11-26T07:14:20.315Z",
-      "updatedAt": "2026-11-26T07:50:54.791Z"
-    },
-    {
-      "id": "mwx7vlln5c62k",
-      "title": "Viêm tuỵ cấp",
-      "html": "\n<h1 style=\"text-align:center\">BỆNH ÁN NGOẠI KHOA</h1>\n<p style=\"text-align:center\"><b>Viêm tuỵ cấp</b></p>\n<h2>I. HÀNH CHÍNH</h2>\n<p>Họ và tên: …………………… &nbsp;&nbsp; Tuổi: …… &nbsp;&nbsp; Giới: ……</p>\n<p>Nghề nghiệp: …………………… &nbsp;&nbsp; Địa chỉ: ……………………</p>\n<p>Ngày giờ vào viện: …………………… &nbsp;&nbsp; Khoa: ……………………</p>\n<h2>II. LÝ DO VÀO VIỆN</h2>\n<p>……………………</p>\n<h2>III. BỆNH SỬ</h2>\n<p>Khởi phát: ……………………</p>\n<p>Diễn biến: ……………………</p>\n<p>Điều trị trước khi vào viện: ……………………</p>\n<p>Tình trạng lúc vào viện: ……………………</p>\n<h2>IV. TIỀN SỬ</h2>\n<p><b>1. Bản thân:</b> ……………………</p>\n<p><b>2. Gia đình:</b> ……………………</p>\n<h2>V. KHÁM LÂM SÀNG</h2>\n<p><b>1. Toàn thân:</b> Tỉnh, tiếp xúc tốt. Mạch … l/p, nhiệt độ … °C, huyết áp …/… mmHg, nhịp thở … l/p, SpO₂ … %.</p>\n<p><b>2. Khám bộ phận:</b></p>\n<ul><li>Bụng: ……………………</li><li>Tim mạch: ……………………</li><li>Hô hấp: ……………………</li><li>Các cơ quan khác: ……………………</li></ul>\n<h2>VI. CẬN LÂM SÀNG</h2>\n<p>……………………</p>\n<h2>VII. TÓM TẮT – CHẨN ĐOÁN</h2>\n<p><b>Tóm tắt bệnh án:</b> ……………………</p>\n<p><b>Chẩn đoán sơ bộ:</b> ……………………</p>\n<p><b>Hướng xử trí:</b> ……………………</p>",
-      "parentId": "mwx7vllnjzaxi",
-      "icon": "",
-      "createdAt": "2026-11-26T07:14:20.315Z",
-      "updatedAt": "2026-11-26T07:50:56.207Z"
-    },
-    {
-      "id": "mwx7vlln3e41k",
-      "title": "Lồng ruột",
-      "html": "\n<h1 style=\"text-align:center\">BỆNH ÁN NGOẠI KHOA</h1>\n<p style=\"text-align:center\"><b>Lồng ruột</b></p>\n<h2>I. HÀNH CHÍNH</h2>\n<p>Họ và tên: …………………… &nbsp;&nbsp; Tuổi: …… &nbsp;&nbsp; Giới: ……</p>\n<p>Nghề nghiệp: …………………… &nbsp;&nbsp; Địa chỉ: ……………………</p>\n<p>Ngày giờ vào viện: …………………… &nbsp;&nbsp; Khoa: ……………………</p>\n<h2>II. LÝ DO VÀO VIỆN</h2>\n<p>……………………</p>\n<h2>III. BỆNH SỬ</h2>\n<p>Khởi phát: ……………………</p>\n<p>Diễn biến: ……………………</p>\n<p>Điều trị trước khi vào viện: ……………………</p>\n<p>Tình trạng lúc vào viện: ……………………</p>\n<h2>IV. TIỀN SỬ</h2>\n<p><b>1. Bản thân:</b> ……………………</p>\n<p><b>2. Gia đình:</b> ……………………</p>\n<h2>V. KHÁM LÂM SÀNG</h2>\n<p><b>1. Toàn thân:</b> Tỉnh, tiếp xúc tốt. Mạch … l/p, nhiệt độ … °C, huyết áp …/… mmHg, nhịp thở … l/p, SpO₂ … %.</p>\n<p><b>2. Khám bộ phận:</b></p>\n<ul><li>Bụng: ……………………</li><li>Tim mạch: ……………………</li><li>Hô hấp: ……………………</li><li>Các cơ quan khác: ……………………</li></ul>\n<h2>VI. CẬN LÂM SÀNG</h2>\n<p>……………………</p>\n<h2>VII. TÓM TẮT – CHẨN ĐOÁN</h2>\n<p><b>Tóm tắt bệnh án:</b> ……………………</p>\n<p><b>Chẩn đoán sơ bộ:</b> ……………………</p>\n<p><b>Hướng xử trí:</b> ……………………</p>",
-      "parentId": "mwx7vllnjzaxi",
-      "icon": "",
-      "createdAt": "2026-11-26T07:14:20.315Z",
-      "updatedAt": "2026-11-26T07:32:37.455Z"
-    },
-    {
-      "id": "mwx7vllnbazpt",
-      "title": "Sỏi túi mật",
-      "html": "\n<h1 style=\"text-align:center\">BỆNH ÁN NGOẠI KHOA</h1>\n<p style=\"text-align:center\"><b>Sỏi túi mật</b></p>\n<h2>I. HÀNH CHÍNH</h2>\n<p>Họ và tên: …………………… &nbsp;&nbsp; Tuổi: …… &nbsp;&nbsp; Giới: ……</p>\n<p>Nghề nghiệp: …………………… &nbsp;&nbsp; Địa chỉ: ……………………</p>\n<p>Ngày giờ vào viện: …………………… &nbsp;&nbsp; Khoa: ……………………</p>\n<h2>II. LÝ DO VÀO VIỆN</h2>\n<p>……………………</p>\n<h2>III. BỆNH SỬ</h2>\n<p>Khởi phát: ……………………</p>\n<p>Diễn biến: ……………………</p>\n<p>Điều trị trước khi vào viện: ……………………</p>\n<p>Tình trạng lúc vào viện: ……………………</p>\n<h2>IV. TIỀN SỬ</h2>\n<p><b>1. Bản thân:</b> ……………………</p>\n<p><b>2. Gia đình:</b> ……………………</p>\n<h2>V. KHÁM LÂM SÀNG</h2>\n<p><b>1. Toàn thân:</b> Tỉnh, tiếp xúc tốt. Mạch … l/p, nhiệt độ … °C, huyết áp …/… mmHg, nhịp thở … l/p, SpO₂ … %.</p>\n<p><b>2. Khám bộ phận:</b></p>\n<ul><li>Bụng: ……………………</li><li>Tim mạch: ……………………</li><li>Hô hấp: ……………………</li><li>Các cơ quan khác: ……………………</li></ul>\n<h2>VI. CẬN LÂM SÀNG</h2>\n<p>……………………</p>\n<h2>VII. TÓM TẮT – CHẨN ĐOÁN</h2>\n<p><b>Tóm tắt bệnh án:</b> ……………………</p>\n<p><b>Chẩn đoán sơ bộ:</b> ……………………</p>\n<p><b>Hướng xử trí:</b> ……………………</p>",
-      "parentId": "mwx7vllnjzaxi",
-      "icon": "",
-      "createdAt": "2026-11-26T07:14:20.315Z",
-      "updatedAt": "2026-11-26T07:49:36.353Z"
-    },
-    {
-      "id": "mwx7vllnnizkl",
-      "title": "2. TIẾT NIỆU,SINH DỤC",
-      "html": "<h1>2. TIẾT NIỆU,SINH DỤC</h1><p><br></p>",
-      "parentId": "mwx7vlln3n6mv",
-      "icon": "🇻🇳",
-      "createdAt": "2026-11-26T07:14:20.315Z",
-      "updatedAt": "2026-11-26T07:32:34.914Z"
-    },
-    {
-      "id": "mwx7vllnxhhrf",
-      "title": "Đau quặn thận PHẢI",
-      "html": "\n<h1 style=\"text-align:center\">BỆNH ÁN NGOẠI KHOA</h1>\n<p style=\"text-align:center\"><b>Đau quặn thận PHẢI</b></p>\n<h2>I. HÀNH CHÍNH</h2>\n<p>Họ và tên: …………………… &nbsp;&nbsp; Tuổi: …… &nbsp;&nbsp; Giới: ……</p>\n<p>Nghề nghiệp: …………………… &nbsp;&nbsp; Địa chỉ: ……………………</p>\n<p>Ngày giờ vào viện: …………………… &nbsp;&nbsp; Khoa: ……………………</p>\n<h2>II. LÝ DO VÀO VIỆN</h2>\n<p>……………………</p>\n<h2>III. BỆNH SỬ</h2>\n<p>Khởi phát: ……………………</p>\n<p>Diễn biến: ……………………</p>\n<p>Điều trị trước khi vào viện: ……………………</p>\n<p>Tình trạng lúc vào viện: ……………………</p>\n<h2>IV. TIỀN SỬ</h2>\n<p><b>1. Bản thân:</b> ……………………</p>\n<p><b>2. Gia đình:</b> ……………………</p>\n<h2>V. KHÁM LÂM SÀNG</h2>\n<p><b>1. Toàn thân:</b> Tỉnh, tiếp xúc tốt. Mạch … l/p, nhiệt độ … °C, huyết áp …/… mmHg, nhịp thở … l/p, SpO₂ … %.</p>\n<p><b>2. Khám bộ phận:</b></p>\n<ul><li>Bụng: ……………………</li><li>Tim mạch: ……………………</li><li>Hô hấp: ……………………</li><li>Các cơ quan khác: ……………………</li></ul>\n<h2>VI. CẬN LÂM SÀNG</h2>\n<p>……………………</p>\n<h2>VII. TÓM TẮT – CHẨN ĐOÁN</h2>\n<p><b>Tóm tắt bệnh án:</b> ……………………</p>\n<p><b>Chẩn đoán sơ bộ:</b> ……………………</p>\n<p><b>Hướng xử trí:</b> ……………………</p>",
-      "parentId": "mwx7vllnnizkl",
-      "icon": "",
-      "createdAt": "2026-11-26T07:14:20.315Z",
-      "updatedAt": "2026-11-26T07:32:23.392Z"
-    },
-    {
-      "id": "mwx7vllnp3cts",
-      "title": "Đau quặn thận TRÁI",
-      "html": "\n<h1 style=\"text-align:center\">BỆNH ÁN NGOẠI KHOA</h1>\n<p style=\"text-align:center\"><b>Đau quặn thận TRÁI</b></p>\n<h2>I. HÀNH CHÍNH</h2>\n<p>Họ và tên: …………………… &nbsp;&nbsp; Tuổi: …… &nbsp;&nbsp; Giới: ……</p>\n<p>Nghề nghiệp: …………………… &nbsp;&nbsp; Địa chỉ: ……………………</p>\n<p>Ngày giờ vào viện: …………………… &nbsp;&nbsp; Khoa: ……………………</p>\n<h2>II. LÝ DO VÀO VIỆN</h2>\n<p>……………………</p>\n<h2>III. BỆNH SỬ</h2>\n<p>Khởi phát: ……………………</p>\n<p>Diễn biến: ……………………</p>\n<p>Điều trị trước khi vào viện: ……………………</p>\n<p>Tình trạng lúc vào viện: ……………………</p>\n<h2>IV. TIỀN SỬ</h2>\n<p><b>1. Bản thân:</b> ……………………</p>\n<p><b>2. Gia đình:</b> ……………………</p>\n<h2>V. KHÁM LÂM SÀNG</h2>\n<p><b>1. Toàn thân:</b> Tỉnh, tiếp xúc tốt. Mạch … l/p, nhiệt độ … °C, huyết áp …/… mmHg, nhịp thở … l/p, SpO₂ … %.</p>\n<p><b>2. Khám bộ phận:</b></p>\n<ul><li>Bụng: ……………………</li><li>Tim mạch: ……………………</li><li>Hô hấp: ……………………</li><li>Các cơ quan khác: ……………………</li></ul>\n<h2>VI. CẬN LÂM SÀNG</h2>\n<p>……………………</p>\n<h2>VII. TÓM TẮT – CHẨN ĐOÁN</h2>\n<p><b>Tóm tắt bệnh án:</b> ……………………</p>\n<p><b>Chẩn đoán sơ bộ:</b> ……………………</p>\n<p><b>Hướng xử trí:</b> ……………………</p>",
-      "parentId": "mwx7vllnnizkl",
-      "icon": "",
-      "createdAt": "2026-11-26T07:14:20.315Z",
-      "updatedAt": "2026-11-26T07:32:37.134Z"
-    },
-    {
-      "id": "mwx7vlln7o6wq",
-      "title": "Viêm bàng quang",
-      "html": "\n<h1 style=\"text-align:center\">BỆNH ÁN NGOẠI KHOA</h1>\n<p style=\"text-align:center\"><b>Viêm bàng quang</b></p>\n<h2>I. HÀNH CHÍNH</h2>\n<p>Họ và tên: …………………… &nbsp;&nbsp; Tuổi: …… &nbsp;&nbsp; Giới: ……</p>\n<p>Nghề nghiệp: …………………… &nbsp;&nbsp; Địa chỉ: ……………………</p>\n<p>Ngày giờ vào viện: …………………… &nbsp;&nbsp; Khoa: ……………………</p>\n<h2>II. LÝ DO VÀO VIỆN</h2>\n<p>……………………</p>\n<h2>III. BỆNH SỬ</h2>\n<p>Khởi phát: ……………………</p>\n<p>Diễn biến: ……………………</p>\n<p>Điều trị trước khi vào viện: ……………………</p>\n<p>Tình trạng lúc vào viện: ……………………</p>\n<h2>IV. TIỀN SỬ</h2>\n<p><b>1. Bản thân:</b> ……………………</p>\n<p><b>2. Gia đình:</b> ……………………</p>\n<h2>V. KHÁM LÂM SÀNG</h2>\n<p><b>1. Toàn thân:</b> Tỉnh, tiếp xúc tốt. Mạch … l/p, nhiệt độ … °C, huyết áp …/… mmHg, nhịp thở … l/p, SpO₂ … %.</p>\n<p><b>2. Khám bộ phận:</b></p>\n<ul><li>Bụng: ……………………</li><li>Tim mạch: ……………………</li><li>Hô hấp: ……………………</li><li>Các cơ quan khác: ……………………</li></ul>\n<h2>VI. CẬN LÂM SÀNG</h2>\n<p>……………………</p>\n<h2>VII. TÓM TẮT – CHẨN ĐOÁN</h2>\n<p><b>Tóm tắt bệnh án:</b> ……………………</p>\n<p><b>Chẩn đoán sơ bộ:</b> ……………………</p>\n<p><b>Hướng xử trí:</b> ……………………</p>",
-      "parentId": "mwx7vllnnizkl",
-      "icon": "",
-      "createdAt": "2026-11-26T07:14:20.315Z",
-      "updatedAt": "2026-11-26T07:32:36.736Z"
-    },
-    {
-      "id": "mwx7vllnv4zvd",
-      "title": "Viêm tinh hoàn",
-      "html": "\n<h1 style=\"text-align:center\">BỆNH ÁN NGOẠI KHOA</h1>\n<p style=\"text-align:center\"><b>Viêm tinh hoàn</b></p>\n<h2>I. HÀNH CHÍNH</h2>\n<p>Họ và tên: …………………… &nbsp;&nbsp; Tuổi: …… &nbsp;&nbsp; Giới: ……</p>\n<p>Nghề nghiệp: …………………… &nbsp;&nbsp; Địa chỉ: ……………………</p>\n<p>Ngày giờ vào viện: …………………… &nbsp;&nbsp; Khoa: ……………………</p>\n<h2>II. LÝ DO VÀO VIỆN</h2>\n<p>……………………</p>\n<h2>III. BỆNH SỬ</h2>\n<p>Khởi phát: ……………………</p>\n<p>Diễn biến: ……………………</p>\n<p>Điều trị trước khi vào viện: ……………………</p>\n<p>Tình trạng lúc vào viện: ……………………</p>\n<h2>IV. TIỀN SỬ</h2>\n<p><b>1. Bản thân:</b> ……………………</p>\n<p><b>2. Gia đình:</b> ……………………</p>\n<h2>V. KHÁM LÂM SÀNG</h2>\n<p><b>1. Toàn thân:</b> Tỉnh, tiếp xúc tốt. Mạch … l/p, nhiệt độ … °C, huyết áp …/… mmHg, nhịp thở … l/p, SpO₂ … %.</p>\n<p><b>2. Khám bộ phận:</b></p>\n<ul><li>Bụng: ……………………</li><li>Tim mạch: ……………………</li><li>Hô hấp: ……………………</li><li>Các cơ quan khác: ……………………</li></ul>\n<h2>VI. CẬN LÂM SÀNG</h2>\n<p>……………………</p>\n<h2>VII. TÓM TẮT – CHẨN ĐOÁN</h2>\n<p><b>Tóm tắt bệnh án:</b> ……………………</p>\n<p><b>Chẩn đoán sơ bộ:</b> ……………………</p>\n<p><b>Hướng xử trí:</b> ……………………</p>",
-      "parentId": "mwx7vllnnizkl",
-      "icon": "",
-      "createdAt": "2026-11-26T07:14:20.315Z",
-      "updatedAt": "2026-11-26T07:32:06.223Z"
-    },
-    {
-      "id": "mwx7vlln88fr9",
-      "title": "Tiền liệt tuyến",
-      "html": "\n<h1 style=\"text-align:center\">BỆNH ÁN NGOẠI KHOA</h1>\n<p style=\"text-align:center\"><b>Tiền liệt tuyến</b></p>\n<h2>I. HÀNH CHÍNH</h2>\n<p>Họ và tên: …………………… &nbsp;&nbsp; Tuổi: …… &nbsp;&nbsp; Giới: ……</p>\n<p>Nghề nghiệp: …………………… &nbsp;&nbsp; Địa chỉ: ……………………</p>\n<p>Ngày giờ vào viện: …………………… &nbsp;&nbsp; Khoa: ……………………</p>\n<h2>II. LÝ DO VÀO VIỆN</h2>\n<p>……………………</p>\n<h2>III. BỆNH SỬ</h2>\n<p>Khởi phát: ……………………</p>\n<p>Diễn biến: ……………………</p>\n<p>Điều trị trước khi vào viện: ……………………</p>\n<p>Tình trạng lúc vào viện: ……………………</p>\n<h2>IV. TIỀN SỬ</h2>\n<p><b>1. Bản thân:</b> ……………………</p>\n<p><b>2. Gia đình:</b> ……………………</p>\n<h2>V. KHÁM LÂM SÀNG</h2>\n<p><b>1. Toàn thân:</b> Tỉnh, tiếp xúc tốt. Mạch … l/p, nhiệt độ … °C, huyết áp …/… mmHg, nhịp thở … l/p, SpO₂ … %.</p>\n<p><b>2. Khám bộ phận:</b></p>\n<ul><li>Bụng: ……………………</li><li>Tim mạch: ……………………</li><li>Hô hấp: ……………………</li><li>Các cơ quan khác: ……………………</li></ul>\n<h2>VI. CẬN LÂM SÀNG</h2>\n<p>……………………</p>\n<h2>VII. TÓM TẮT – CHẨN ĐOÁN</h2>\n<p><b>Tóm tắt bệnh án:</b> ……………………</p>\n<p><b>Chẩn đoán sơ bộ:</b> ……………………</p>\n<p><b>Hướng xử trí:</b> ……………………</p>",
-      "parentId": "mwx7vllnnizkl",
-      "icon": "",
-      "createdAt": "2026-11-26T07:14:20.315Z",
-      "updatedAt": "2026-11-26T07:32:35.424Z"
-    },
-    {
-      "id": "mwx7vllns9o9r",
-      "title": "Thoát vị bẹn",
-      "html": "\n<h1 style=\"text-align:center\">BỆNH ÁN NGOẠI KHOA</h1>\n<p style=\"text-align:center\"><b>Thoát vị bẹn</b></p>\n<h2>I. HÀNH CHÍNH</h2>\n<p>Họ và tên: …………………… &nbsp;&nbsp; Tuổi: …… &nbsp;&nbsp; Giới: ……</p>\n<p>Nghề nghiệp: …………………… &nbsp;&nbsp; Địa chỉ: ……………………</p>\n<p>Ngày giờ vào viện: …………………… &nbsp;&nbsp; Khoa: ……………………</p>\n<h2>II. LÝ DO VÀO VIỆN</h2>\n<p>……………………</p>\n<h2>III. BỆNH SỬ</h2>\n<p>Khởi phát: ……………………</p>\n<p>Diễn biến: ……………………</p>\n<p>Điều trị trước khi vào viện: ……………………</p>\n<p>Tình trạng lúc vào viện: ……………………</p>\n<h2>IV. TIỀN SỬ</h2>\n<p><b>1. Bản thân:</b> ……………………</p>\n<p><b>2. Gia đình:</b> ……………………</p>\n<h2>V. KHÁM LÂM SÀNG</h2>\n<p><b>1. Toàn thân:</b> Tỉnh, tiếp xúc tốt. Mạch … l/p, nhiệt độ … °C, huyết áp …/… mmHg, nhịp thở … l/p, SpO₂ … %.</p>\n<p><b>2. Khám bộ phận:</b></p>\n<ul><li>Bụng: ……………………</li><li>Tim mạch: ……………………</li><li>Hô hấp: ……………………</li><li>Các cơ quan khác: ……………………</li></ul>\n<h2>VI. CẬN LÂM SÀNG</h2>\n<p>……………………</p>\n<h2>VII. TÓM TẮT – CHẨN ĐOÁN</h2>\n<p><b>Tóm tắt bệnh án:</b> ……………………</p>\n<p><b>Chẩn đoán sơ bộ:</b> ……………………</p>\n<p><b>Hướng xử trí:</b> ……………………</p>",
-      "parentId": "mwx7vllnnizkl",
-      "icon": "",
-      "createdAt": "2026-11-26T07:14:20.315Z",
-      "updatedAt": "2026-11-26T07:32:33.839Z"
-    },
-    {
-      "id": "mwx7vllntk69g",
-      "title": "Trĩ",
-      "html": "\n<h1 style=\"text-align:center\">BỆNH ÁN NGOẠI KHOA</h1>\n<p style=\"text-align:center\"><b>Trĩ</b></p>\n<h2>I. HÀNH CHÍNH</h2>\n<p>Họ và tên: …………………… &nbsp;&nbsp; Tuổi: …… &nbsp;&nbsp; Giới: ……</p>\n<p>Nghề nghiệp: …………………… &nbsp;&nbsp; Địa chỉ: ……………………</p>\n<p>Ngày giờ vào viện: …………………… &nbsp;&nbsp; Khoa: ……………………</p>\n<h2>II. LÝ DO VÀO VIỆN</h2>\n<p>……………………</p>\n<h2>III. BỆNH SỬ</h2>\n<p>Khởi phát: ……………………</p>\n<p>Diễn biến: ……………………</p>\n<p>Điều trị trước khi vào viện: ……………………</p>\n<p>Tình trạng lúc vào viện: ……………………</p>\n<h2>IV. TIỀN SỬ</h2>\n<p><b>1. Bản thân:</b> ……………………</p>\n<p><b>2. Gia đình:</b> ……………………</p>\n<h2>V. KHÁM LÂM SÀNG</h2>\n<p><b>1. Toàn thân:</b> Tỉnh, tiếp xúc tốt. Mạch … l/p, nhiệt độ … °C, huyết áp …/… mmHg, nhịp thở … l/p, SpO₂ … %.</p>\n<p><b>2. Khám bộ phận:</b></p>\n<ul><li>Bụng: ……………………</li><li>Tim mạch: ……………………</li><li>Hô hấp: ……………………</li><li>Các cơ quan khác: ……………………</li></ul>\n<h2>VI. CẬN LÂM SÀNG</h2>\n<p>……………………</p>\n<h2>VII. TÓM TẮT – CHẨN ĐOÁN</h2>\n<p><b>Tóm tắt bệnh án:</b> ……………………</p>\n<p><b>Chẩn đoán sơ bộ:</b> ……………………</p>\n<p><b>Hướng xử trí:</b> ……………………</p>",
-      "parentId": "mwx7vllnnizkl",
-      "icon": "",
-      "createdAt": "2026-11-26T07:14:20.315Z",
-      "updatedAt": "2026-11-26T07:14:20.315Z"
-    },
-    {
-      "id": "mwx7vlln1h91s",
-      "title": "3. CHẤN THƯƠNG",
-      "html": "<h1>3. CHẤN THƯƠNG</h1><p><br></p>",
-      "parentId": "mwx7vlln3n6mv",
-      "icon": "🇻🇳",
-      "createdAt": "2026-11-26T07:14:20.315Z",
-      "updatedAt": "2026-11-26T07:32:35.679Z"
-    },
-    {
-      "id": "mwx7vllndzkqm",
-      "title": "Gãy xương đòn",
-      "html": "\n<h1 style=\"text-align:center\">BỆNH ÁN NGOẠI KHOA</h1>\n<p style=\"text-align:center\"><b>Gãy xương đòn</b></p>\n<h2>I. HÀNH CHÍNH</h2>\n<p>Họ và tên: …………………… &nbsp;&nbsp; Tuổi: …… &nbsp;&nbsp; Giới: ……</p>\n<p>Nghề nghiệp: …………………… &nbsp;&nbsp; Địa chỉ: ……………………</p>\n<p>Ngày giờ vào viện: …………………… &nbsp;&nbsp; Khoa: ……………………</p>\n<h2>II. LÝ DO VÀO VIỆN</h2>\n<p>……………………</p>\n<h2>III. BỆNH SỬ</h2>\n<p>Khởi phát: ……………………</p>\n<p>Diễn biến: ……………………</p>\n<p>Điều trị trước khi vào viện: ……………………</p>\n<p>Tình trạng lúc vào viện: ……………………</p>\n<h2>IV. TIỀN SỬ</h2>\n<p><b>1. Bản thân:</b> ……………………</p>\n<p><b>2. Gia đình:</b> ……………………</p>\n<h2>V. KHÁM LÂM SÀNG</h2>\n<p><b>1. Toàn thân:</b> Tỉnh, tiếp xúc tốt. Mạch … l/p, nhiệt độ … °C, huyết áp …/… mmHg, nhịp thở … l/p, SpO₂ … %.</p>\n<p><b>2. Khám bộ phận:</b></p>\n<ul><li>Bụng: ……………………</li><li>Tim mạch: ……………………</li><li>Hô hấp: ……………………</li><li>Các cơ quan khác: ……………………</li></ul>\n<h2>VI. CẬN LÂM SÀNG</h2>\n<p>……………………</p>\n<h2>VII. TÓM TẮT – CHẨN ĐOÁN</h2>\n<p><b>Tóm tắt bệnh án:</b> ……………………</p>\n<p><b>Chẩn đoán sơ bộ:</b> ……………………</p>\n<p><b>Hướng xử trí:</b> ……………………</p>",
-      "parentId": "mwx7vlln1h91s",
-      "icon": "",
-      "createdAt": "2026-11-26T07:14:20.315Z",
-      "updatedAt": "2026-11-26T07:32:36.456Z"
-    },
-    {
-      "id": "mwx7vlln3id68",
-      "title": "Đa chấn thương",
-      "html": "\n<h1 style=\"text-align:center\">BỆNH ÁN NGOẠI KHOA</h1>\n<p style=\"text-align:center\"><b>Đa chấn thương</b></p>\n<h2>I. HÀNH CHÍNH</h2>\n<p>Họ và tên: …………………… &nbsp;&nbsp; Tuổi: …… &nbsp;&nbsp; Giới: ……</p>\n<p>Nghề nghiệp: …………………… &nbsp;&nbsp; Địa chỉ: ……………………</p>\n<p>Ngày giờ vào viện: …………………… &nbsp;&nbsp; Khoa: ……………………</p>\n<h2>II. LÝ DO VÀO VIỆN</h2>\n<p>……………………</p>\n<h2>III. BỆNH SỬ</h2>\n<p>Khởi phát: ……………………</p>\n<p>Diễn biến: ……………………</p>\n<p>Điều trị trước khi vào viện: ……………………</p>\n<p>Tình trạng lúc vào viện: ……………………</p>\n<h2>IV. TIỀN SỬ</h2>\n<p><b>1. Bản thân:</b> ……………………</p>\n<p><b>2. Gia đình:</b> ……………………</p>\n<h2>V. KHÁM LÂM SÀNG</h2>\n<p><b>1. Toàn thân:</b> Tỉnh, tiếp xúc tốt. Mạch … l/p, nhiệt độ … °C, huyết áp …/… mmHg, nhịp thở … l/p, SpO₂ … %.</p>\n<p><b>2. Khám bộ phận:</b></p>\n<ul><li>Bụng: ……………………</li><li>Tim mạch: ……………………</li><li>Hô hấp: ……………………</li><li>Các cơ quan khác: ……………………</li></ul>\n<h2>VI. CẬN LÂM SÀNG</h2>\n<p>……………………</p>\n<h2>VII. TÓM TẮT – CHẨN ĐOÁN</h2>\n<p><b>Tóm tắt bệnh án:</b> ……………………</p>\n<p><b>Chẩn đoán sơ bộ:</b> ……………………</p>\n<p><b>Hướng xử trí:</b> ……………………</p>",
-      "parentId": "mwx7vlln1h91s",
-      "icon": "",
-      "createdAt": "2026-11-26T07:14:20.315Z",
-      "updatedAt": "2026-11-26T07:14:20.315Z"
-    },
-    {
-      "id": "mwx7vllnciag9",
-      "title": "Còn dụng cụ KHX",
-      "html": "\n<h1 style=\"text-align:center\">BỆNH ÁN NGOẠI KHOA</h1>\n<p style=\"text-align:center\"><b>Còn dụng cụ KHX</b></p>\n<h2>I. HÀNH CHÍNH</h2>\n<p>Họ và tên: …………………… &nbsp;&nbsp; Tuổi: …… &nbsp;&nbsp; Giới: ……</p>\n<p>Nghề nghiệp: …………………… &nbsp;&nbsp; Địa chỉ: ……………………</p>\n<p>Ngày giờ vào viện: …………………… &nbsp;&nbsp; Khoa: ……………………</p>\n<h2>II. LÝ DO VÀO VIỆN</h2>\n<p>……………………</p>\n<h2>III. BỆNH SỬ</h2>\n<p>Khởi phát: ……………………</p>\n<p>Diễn biến: ……………………</p>\n<p>Điều trị trước khi vào viện: ……………………</p>\n<p>Tình trạng lúc vào viện: ……………………</p>\n<h2>IV. TIỀN SỬ</h2>\n<p><b>1. Bản thân:</b> ……………………</p>\n<p><b>2. Gia đình:</b> ……………………</p>\n<h2>V. KHÁM LÂM SÀNG</h2>\n<p><b>1. Toàn thân:</b> Tỉnh, tiếp xúc tốt. Mạch … l/p, nhiệt độ … °C, huyết áp …/… mmHg, nhịp thở … l/p, SpO₂ … %.</p>\n<p><b>2. Khám bộ phận:</b></p>\n<ul><li>Bụng: ……………………</li><li>Tim mạch: ……………………</li><li>Hô hấp: ……………………</li><li>Các cơ quan khác: ……………………</li></ul>\n<h2>VI. CẬN LÂM SÀNG</h2>\n<p>……………………</p>\n<h2>VII. TÓM TẮT – CHẨN ĐOÁN</h2>\n<p><b>Tóm tắt bệnh án:</b> ……………………</p>\n<p><b>Chẩn đoán sơ bộ:</b> ……………………</p>\n<p><b>Hướng xử trí:</b> ……………………</p>",
-      "parentId": "mwx7vlln1h91s",
-      "icon": "",
-      "createdAt": "2026-11-26T07:14:20.315Z",
-      "updatedAt": "2026-11-26T07:14:20.315Z"
     }
   ]
 }
