@@ -1,7 +1,7 @@
 {
   "app": "phan-mem-benh-su",
   "version": 1,
-  "savedAt": "2026-11-26T08:57:57.822Z",
+  "savedAt": "2026-11-26T08:58:02.324Z",
   "settings": {
     "background": "goodnote"
   },
@@ -137,11 +137,11 @@
     {
       "id": "mwx7unf2wndv6",
       "title": "Trĩ",
-      "html": "\n<h1 style=\"text-align:center\">BỆNH ÁN NGOẠI KHOA</h1>\n<p style=\"text-align:center\"><b>Trĩ</b></p>\n<h2>I. HÀNH CHÍNH</h2>\n<p>Họ và tên: …………………… &nbsp;&nbsp; Tuổi: …… &nbsp;&nbsp; Giới: ……</p>\n<p>Nghề nghiệp: …………………… &nbsp;&nbsp; Địa chỉ: ……………………</p>\n<p>Ngày giờ vào viện: …………………… &nbsp;&nbsp; Khoa: ……………………</p>\n<h2>II. LÝ DO VÀO VIỆN</h2>\n<p>……………………</p>\n<h2>III. BỆNH SỬ</h2>\n<p>Khởi phát: ……………………</p>\n<p>Diễn biến: ……………………</p>\n<p>Điều trị trước khi vào viện: ……………………</p>\n<p>Tình trạng lúc vào viện: ……………………</p>\n<h2>IV. TIỀN SỬ</h2>\n<p><b>1. Bản thân:</b> ……………………</p>\n<p><b>2. Gia đình:</b> ……………………</p>\n<h2>V. KHÁM LÂM SÀNG</h2>\n<p><b>1. Toàn thân:</b> Tỉnh, tiếp xúc tốt. Mạch … l/p, nhiệt độ … °C, huyết áp …/… mmHg, nhịp thở … l/p, SpO₂ … %.</p>\n<p><b>2. Khám bộ phận:</b></p>\n<ul><li>Bụng: ……………………</li><li>Tim mạch: ……………………</li><li>Hô hấp: ……………………</li><li>Các cơ quan khác: ……………………</li></ul>\n<h2>VI. CẬN LÂM SÀNG</h2>\n<p>……………………</p>\n<h2>VII. TÓM TẮT – CHẨN ĐOÁN</h2>\n<p><b>Tóm tắt bệnh án:</b> ……………………</p>\n<p><b>Chẩn đoán sơ bộ:</b> ……………………</p>\n<p><b>Hướng xử trí:</b> ……………………</p>",
+      "html": "<!--StartFragment--><p dir=\"ltr\"><span style=\"color: rgb(0, 0, 0); font-variant: normal; vertical-align: baseline; white-space: pre-wrap;\">Theo lời bệnh nhân kể lại, bệnh nhân xuất hiện khối vùng hậu môn cách đây 5 năm, kèm đi ngoài phân táo nhiều lần, nay khối vùng hậu môn tăng lên kèm đi ngoài phân máu, ở nhà chưa xử trí điều trị gì, vào viện khám và điều trị</span></p><p dir=\"ltr\"><span style=\"color: rgb(0, 0, 0); font-variant: normal; vertical-align: baseline; white-space: pre-wrap;\">Tình trạng lúc vào:</span></p><p dir=\"ltr\"><span style=\"color: rgb(0, 0, 0); font-variant: normal; vertical-align: baseline; white-space: pre-wrap;\">Bệnh nhân tỉnh, da niêm mạc hồng.&nbsp;</span></p><p dir=\"ltr\"><span style=\"color: rgb(0, 0, 0); font-variant: normal; vertical-align: baseline; white-space: pre-wrap;\">Tuyến giáp không to, hạch không sờ thấy</span></p><p dir=\"ltr\"><span style=\"color: rgb(0, 0, 0); font-variant: normal; vertical-align: baseline; white-space: pre-wrap;\">Toàn trạng ổn định</span></p><p dir=\"ltr\"><span style=\"color: rgb(0, 0, 0); font-variant: normal; vertical-align: baseline; white-space: pre-wrap;\">Thăm trực tràng có búi trĩ hỗn hợp độ IV, vị trí góc 6h, 8h, có máu theo găng</span></p><p dir=\"ltr\"><span style=\"color: rgb(0, 0, 0); font-variant: normal; vertical-align: baseline; white-space: pre-wrap;\">Bụng mềm, không chướng, gan lách không to</span></p><p dir=\"ltr\"><span style=\"color: rgb(0, 0, 0); font-variant: normal; vertical-align: baseline; white-space: pre-wrap;\">Tim nhịp đều T1T2 rõ</span></p><p dir=\"ltr\"><span style=\"color: rgb(0, 0, 0); font-variant: normal; vertical-align: baseline; white-space: pre-wrap;\">Phổi thông khí đều 2 bên, không có rales</span></p><p dir=\"ltr\"><span style=\"color: rgb(0, 0, 0); font-variant: normal; vertical-align: baseline; white-space: pre-wrap;\">Nội soi: Trĩ hỗn hợp độ IV</span></p><p dir=\"ltr\"><span style=\"color: rgb(0, 0, 0); font-variant: normal; vertical-align: baseline; white-space: pre-wrap;\">Chẩn đoán: Trĩ hỗn hợp độ IV</span></p><br><!--EndFragment-->",
       "parentId": "mwx7unf2c9wu2",
       "icon": "",
       "createdAt": "2026-11-26T07:13:36.014Z",
-      "updatedAt": "2026-11-26T07:13:48.015Z"
+      "updatedAt": "2026-11-26T08:58:01.956Z"
     },
     {
       "id": "mwx7unf2viitb",
