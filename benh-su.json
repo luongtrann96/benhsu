@@ -1,11 +1,11 @@
 {
   "app": "phan-mem-benh-su",
   "version": 1,
-  "savedAt": "2026-11-26T08:11:15.075Z",
+  "savedAt": "2026-11-26T08:11:40.261Z",
   "settings": {
     "background": "goodnote"
   },
-  "activeId": "mwx7unf2uwcnc",
+  "activeId": "mwx7unf28q48b",
   "deleted": {},
   "documents": [
     {
@@ -38,7 +38,7 @@
     {
       "id": "mwx7unf20dfct",
       "title": "Tắc ruột",
-      "html": "\n<h1 style=\"text-align:center\"><br></h1>",
+      "html": "<p><br></p>",
       "parentId": "mwx7unf25qn2c",
       "icon": "",
       "createdAt": "2026-11-26T07:13:36.014Z",
