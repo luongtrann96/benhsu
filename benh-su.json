@@ -1,7 +1,7 @@
 {
   "app": "phan-mem-benh-su",
   "version": 1,
-  "savedAt": "2026-11-26T06:48:47.625Z",
+  "savedAt": "2026-11-26T06:48:50.151Z",
   "settings": {
     "background": "goodnote"
   },
@@ -28,11 +28,11 @@
     {
       "id": "mww5jm5d56c3s",
       "title": "Viêm ruột thừa",
-      "html": "\n<h1 style=\"text-align:center\"><br></h1>",
+      "html": "\n<h1 style=\"text-align: left;\"><br></h1>",
       "parentId": "mww5jm5dbgx0w",
       "icon": "",
       "createdAt": "2026-11-25T13:21:15.745Z",
-      "updatedAt": "2026-11-26T06:48:45.310Z"
+      "updatedAt": "2026-11-26T06:48:47.832Z"
     },
     {
       "id": "mww5jm5dfm8gp",
