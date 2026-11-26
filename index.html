@@ -148,7 +148,7 @@ body[data-bg=charcoal]{--d1:#454b55;--d2:#2a2e35}
 #status{display:flex;align-items:center;gap:16px;padding:5px 18px;font-size:12px;color:#4b5563;border-top:1px solid var(--line)}
 #status .sp{flex:1}
 #status select{border:0;background:transparent;cursor:pointer}
-#toast{position:fixed;left:50%;bottom:48px;transform:translateX(-50%) translateY(20px);background:#111827;color:#fff;padding:9px 18px;border-radius:999px;opacity:0;pointer-events:none;transition:.3s;z-index:99;font-size:13px}
+#toast{position:fixed;left:50%;bottom:48px;transform:translateX(-50%) translateY(20px);background:#111827;color:#fff;padding:9px 18px;border-radius:999px;opacity:0;pointer-events:none;transition:.3s;z-index:300;font-size:13px}
 #toast.show{opacity:1;transform:translateX(-50%)}
 
 #modal{position:fixed;inset:0;z-index:80;background:rgba(2,6,23,.55);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;padding:16px}
@@ -165,8 +165,30 @@ body[data-bg=charcoal]{--d1:#454b55;--d2:#2a2e35}
 #modal details{font-size:12.5px;color:#374151;margin-top:10px}#modal details ol{padding-left:18px;margin:6px 0;line-height:1.6}
 @media(max-width:900px){#side{display:none}#sheet{padding:40px 30px}}
 
+/* ===== Màn hình khóa bằng mật khẩu ===== */
+#lock{display:none;position:fixed;inset:0;z-index:200;align-items:center;justify-content:center;padding:16px;background:rgba(2,6,23,.55);backdrop-filter:blur(4px)}
+#lock.show{display:flex}
+#lock.full{background:radial-gradient(130% 100% at 50% 0%,#eef2f9,#cfd6e2);backdrop-filter:none}
+body.locked #app{visibility:hidden}
+.lockbox{width:min(360px,100%);background:#fff;border-radius:18px;padding:28px 26px 20px;box-shadow:0 30px 80px rgba(15,23,42,.35);text-align:center}
+.lk-logo{width:52px;height:52px;border-radius:14px;margin:0 auto 12px;background:linear-gradient(135deg,#5b9bff,#3b6ff0);display:grid;place-items:center;color:#fff;box-shadow:0 6px 16px rgba(59,111,240,.35)}
+.lockbox h2{margin:0 0 4px;font-size:19px}
+.lk-sub{margin:0 0 16px;color:var(--muted);font-size:12.5px;line-height:1.5}
+.lk-field{margin-bottom:10px}
+.lk-field input{width:100%;border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:#f9fafb;outline:none;font-size:14px}
+.lk-field input:focus{border-color:var(--accent);background:#fff}
+.lk-show{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);margin:2px 0 6px;cursor:pointer;user-select:none}
+.lk-err{min-height:18px;color:#dc2626;font-size:12.5px;margin:2px 0 8px;line-height:1.4}
+.lk-go{width:100%;justify-content:center;padding:10px;font-size:14px}
+.lk-links{display:flex;justify-content:space-between;gap:8px;margin-top:12px}
+.lk-link{border:0;background:none;color:var(--muted);font-size:12px;cursor:pointer;text-decoration:underline;padding:2px}
+.lk-link:hover{color:var(--accent)}
+.lk-link.danger:hover{color:#dc2626}
+.shake{animation:shake .35s}
+@keyframes shake{20%,60%{transform:translateX(-7px)}40%,80%{transform:translateX(7px)}}
+
 @media print{
-  #bg,#top,#toolbar,#side,#status,#toast{display:none!important}
+  #bg,#top,#toolbar,#side,#status,#toast,#lock{display:none!important}
   html,body,#app,#main{height:auto;overflow:visible;display:block;padding:0;background:#fff}
   #canvas{overflow:visible;padding:0}
   #sheet{zoom:1!important;width:auto;min-height:0;margin:0;padding:0;box-shadow:none;background:none}
@@ -174,7 +196,7 @@ body[data-bg=charcoal]{--d1:#454b55;--d2:#2a2e35}
 }
 </style>
 </head>
-<body data-bg="goodnote">
+<body data-bg="goodnote" class="locked">
 <div id="bg"></div>
 <div id="app">
   <header id="top" class="glass">
@@ -196,6 +218,10 @@ body[data-bg=charcoal]{--d1:#454b55;--d2:#2a2e35}
             <hr>
             <button data-a="ghSettings">Cài đặt đồng bộ GitHub…</button>
             <button data-a="ghSync">Đồng bộ GitHub ngay</button>
+            <button data-a="syncExport">Xuất cấu hình đồng bộ (mã hóa)…</button>
+            <hr>
+            <button data-a="lockNow">Khóa ngay <kbd>Alt+L</kbd></button>
+            <button data-a="pwSettings">Đặt / đổi mật khẩu…</button>
             <hr>
             <button data-a="word">Tải xuống dạng Word (.doc)</button>
             <button data-a="print">In / Lưu PDF <kbd>Ctrl+P</kbd></button>
@@ -230,6 +256,7 @@ body[data-bg=charcoal]{--d1:#454b55;--d2:#2a2e35}
     </div>
     <button id="ghChip" title="Đồng bộ GitHub"><i></i><span>GitHub: chưa kết nối</span></button>
     <button id="chip" title=""><i></i><span>Chưa gắn tệp JSON</span></button>
+    <button class="btn" data-a="lockNow" title="Khóa ngay (Alt+L)" style="padding:6px 9px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></button>
     <button class="btn pri" data-a="save">Lưu</button>
   </header>
 
@@ -308,6 +335,25 @@ body[data-bg=charcoal]{--d1:#454b55;--d2:#2a2e35}
     <button class="btn pri" id="ghSave">Kết nối &amp; đồng bộ</button>
   </div>
 </div></div>
+
+<div id="lock">
+  <form class="lockbox" id="lockForm" autocomplete="off">
+    <div class="lk-logo"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
+    <h2 id="lkTitle">Bệnh sử đã khóa</h2>
+    <p class="lk-sub" id="lkSub">Nhập mật khẩu để xem nội dung bên trong.</p>
+    <div class="lk-field" id="lkRow1"><input id="lkPw" type="password" placeholder="Mật khẩu" autocomplete="current-password"></div>
+    <div class="lk-field" id="lkRow2"><input id="lkPw2" type="password" placeholder="Mật khẩu mới" autocomplete="new-password"></div>
+    <div class="lk-field" id="lkRow3"><input id="lkPw3" type="password" placeholder="Nhập lại mật khẩu mới" autocomplete="new-password"></div>
+    <label class="lk-show"><input type="checkbox" id="lkShow"> Hiện mật khẩu</label>
+    <div class="lk-err" id="lkErr" role="alert"></div>
+    <button class="btn pri lk-go" id="lkGo" type="submit">Mở khóa</button>
+    <div class="lk-links">
+      <button type="button" class="lk-link" id="lkForgot">Quên mật khẩu?</button>
+      <button type="button" class="lk-link danger" id="lkRemove">Xóa mật khẩu</button>
+      <button type="button" class="lk-link" id="lkCancel">Hủy</button>
+    </div>
+  </form>
+</div>
 <input type="file" id="fileIn" accept=".json,application/json" hidden>
 <input type="file" id="imgIn" accept="image/*" hidden>
 
@@ -351,6 +397,8 @@ const TPL_BENHAN = `
 
 /* ---------- Trạng thái ---------- */
 let state = { docs: [], activeId: null, savedAt: 0 };
+let locked = true, wiped = false;   // locked: đang khóa bằng mật khẩu; wiped: đã xóa dữ liệu (quên mật khẩu)
+let freshLocal = false, sessionPw = '', syncBlob = null, syncBlobP = null;   // freshLocal: máy mới, chưa có dữ liệu riêng; sessionPw: mật khẩu vừa nhập (chỉ trong bộ nhớ)
 let ui = { bg: 'goodnote', side: true, closed: {} };
 let fileHandle = null, fileState = 'none';   // none | needperm | ok
 let saveTimer = null, dirtyFile = false, lastRange = null;
@@ -391,9 +439,10 @@ function exportData() {
 }
 
 /* ---------- Lưu trữ ---------- */
-function toast(msg) { const t = $('#toast'); t.textContent = msg; t.classList.add('show'); clearTimeout(toast.t); toast.t = setTimeout(() => t.classList.remove('show'), 2400); }
+function toast(msg, ms) { const t = $('#toast'); t.textContent = msg; t.classList.add('show'); clearTimeout(toast.t); toast.t = setTimeout(() => t.classList.remove('show'), ms || 2400); }
 function setSaveText(txt) { $('#stSave').textContent = txt; }
 function saveLocal() {
+  if (wiped) return false;
   try { state.savedAt = Date.now(); localStorage.setItem(LS_KEY, JSON.stringify(exportData())); return true; }
   catch (e) { toast('Bộ nhớ trình duyệt đầy — hãy lưu ra tệp JSON!'); return false; }
 }
@@ -405,7 +454,7 @@ async function writeFile() {
   await w.close(); dirtyFile = false; return true;
 }
 function schedulePersist() {
-  setSaveText('Đang lưu…'); dirtyFile = true;
+  setSaveText('Đang lưu…'); dirtyFile = true; freshLocal = false;
   if (ghOn()) { ghMeta.dirty = true; ghSaveMeta(); }
   clearTimeout(saveTimer);
   saveTimer = setTimeout(async () => {
@@ -425,7 +474,7 @@ const idb = {
   db() { return new Promise((res, rej) => { const r = indexedDB.open('benhsu', 1); r.onupgradeneeded = () => r.result.createObjectStore('kv'); r.onsuccess = () => res(r.result); r.onerror = () => rej(r.error); }); },
   async get(k) { try { const db = await this.db(); return await new Promise(res => { const q = db.transaction('kv').objectStore('kv').get(k); q.onsuccess = () => res(q.result); q.onerror = () => res(null); }); } catch (e) { return null; } },
   async set(k, v) { try { const db = await this.db(); return await new Promise(res => { const tx = db.transaction('kv', 'readwrite'); tx.objectStore('kv').put(v, k); tx.oncomplete = () => res(); tx.onerror = () => res(); }); } catch (e) {} },
-  async del(k) { try { const db = await this.db(); db.transaction('kv', 'readwrite').objectStore('kv').delete(k); } catch (e) {} }
+  async del(k) { try { const db = await this.db(); return await new Promise(res => { const tx = db.transaction('kv', 'readwrite'); tx.objectStore('kv').delete(k); tx.oncomplete = () => res(); tx.onerror = () => res(); }); } catch (e) {} }
 };
 
 function renderChip() {
@@ -515,6 +564,7 @@ $('#fileIn').addEventListener('change', e => {
 
 /* ---------- Tài liệu ---------- */
 function syncFromSheet() {
+  if (locked) return;
   const d = cur(); if (!d) return;
   d.html = sheet.innerHTML; d.updatedAt = now();
 }
@@ -544,6 +594,7 @@ function seedDocs() {
 }
 
 function renderList() {
+  if (locked) return;
   const q = $('#search').value.trim().toLowerCase();
   const L = $('#list'); L.innerHTML = '';
   let show = null;
@@ -664,6 +715,7 @@ function openEmo(id, x, y) {
 }
 function setIcon(id, e) { const d = byId(id); if (!d) return; d.icon = e.slice(0, 16); d.updatedAt = now(); closePops(); renderList(); schedulePersist(); }
 function renderOutline() {
+  if (locked) return;
   const O = $('#outline'); O.innerHTML = '';
   const hs = $$('h1,h2,h3', sheet);
   if (!hs.length) { O.innerHTML = '<div class="empty">Chưa có tiêu đề.<br>Dùng “Tiêu đề 1/2/3” để tạo dàn ý.</div>'; return; }
@@ -674,6 +726,7 @@ function renderOutline() {
   });
 }
 function renderAll() {
+  if (locked) return;
   const d = cur();
   sheet.innerHTML = d ? sanitize(d.html) : TPL_BLANK;
   if (!sheet.textContent.trim() && !sheet.querySelector('img,table,hr')) sheet.innerHTML = TPL_BLANK;
@@ -720,13 +773,14 @@ document.addEventListener('selectionchange', () => {
 function restoreSel() { if (lastRange) { const s = getSelection(); s.removeAllRanges(); s.addRange(lastRange); } sheet.focus({ preventScroll: true }); }
 function exec(cmd, val) { restoreSel(); document.execCommand(cmd, false, val); onEdit(); refreshToolbar(); }
 function onEdit() {
+  if (locked) return;
   const d = cur(); if (!d) return;
   d.html = sheet.innerHTML; d.updatedAt = now();
   clearTimeout(onEdit.t); onEdit.t = setTimeout(() => { renderOutline(); renderList(); }, 400);
   updateCounts(); schedulePersist();
 }
 sheet.addEventListener('input', onEdit);
-sheet.addEventListener('blur', () => { if (!sheet.innerHTML.trim()) sheet.innerHTML = TPL_BLANK; });
+sheet.addEventListener('blur', () => { if (!locked && !sheet.innerHTML.trim()) sheet.innerHTML = TPL_BLANK; });
 sheet.addEventListener('paste', e => {
   const cd = e.clipboardData; if (!cd) return;
   const html = cd.getData('text/html');
@@ -814,6 +868,9 @@ const actions = {
   quote: () => exec('formatBlock', 'blockquote'),
   ghSettings: () => ghOpenModal(),
   ghSync: () => { if (!ghOn()) ghOpenModal(); else ghSync(true); },
+  syncExport: () => syncExport(),
+  lockNow: () => lockNow(),
+  pwSettings: () => showLock(pwCfg() ? 'change' : 'setup'),
   side: () => { ui.side = !ui.side; applySide(); saveUI(); }
 };
 $$('[data-a]').forEach(b => b.addEventListener('click', () => { closeMenus(); actions[b.dataset.a] && actions[b.dataset.a](); }));
@@ -855,12 +912,14 @@ $('#docTitle').onkeydown = e => { if (e.key === 'Enter') { e.preventDefault(); s
 $('#zoomSel').onchange = e => { const v = +e.target.value; sheet.style.transform = 'scale(' + v + ')'; sheet.style.marginBottom = ((v - 1) * 1123) + 'px'; };
 
 document.addEventListener('keydown', e => {
+  if (locked) return;
   const k = e.key.toLowerCase();
   if ((e.ctrlKey || e.metaKey) && k === 's') { e.preventDefault(); saveFile(); }
   if (e.altKey && k === 'n') { e.preventDefault(); actions.new(); }
+  if (e.altKey && k === 'l') { e.preventDefault(); lockNow(); }
   if ((e.ctrlKey || e.metaKey) && k === '\\') { e.preventDefault(); exec('removeFormat'); }
 });
-window.addEventListener('beforeunload', e => { syncFromSheet(); saveLocal(); if ((dirtyFile && fileHandle) || (ghOn() && ghMeta.dirty)) { e.preventDefault(); e.returnValue = ''; } });
+window.addEventListener('beforeunload', e => { if (wiped) return; syncFromSheet(); saveLocal(); if ((dirtyFile && fileHandle) || (ghOn() && ghMeta.dirty)) { e.preventDefault(); e.returnValue = ''; } });
 
 /* ---------- Đồng bộ GitHub ---------- */
 const LS_GH = 'benhsu_gh_cfg', LS_GHM = 'benhsu_gh_meta';
@@ -913,7 +972,7 @@ function renderGh() {
   else { c.classList.add('ok'); const t = ghLastOk ? new Date(ghLastOk).toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' }) : ''; s.textContent = repo + (t ? ' · ' + t : ''); c.title = 'Đã đồng bộ lên ' + repo + '/' + gh.path; }
 }
 async function ghApply(rem) {
-  loadLibrary(JSON.parse(rem.text));
+  loadLibrary(JSON.parse(rem.text)); freshLocal = false;
   ghMeta.sha = rem.sha; ghMeta.dirty = false; ghSaveMeta(); setGh('ok');
 }
 async function ghPush() {
@@ -941,7 +1000,7 @@ async function ghSync(manual) {
     const rem = await ghGet();
     if (!rem) { ghMeta.sha = null; ghMeta.dirty = true; await ghPush(); if (manual && ghStat === 'ok') toast('Đã tạo ' + gh.path + ' trên GitHub'); return; }
     if (rem.sha === ghMeta.sha) { if (ghMeta.dirty) await ghPush(); else setGh('ok'); if (manual && ghStat === 'ok') toast('Đã đồng bộ'); return; }
-    const localDirty = ghMeta.dirty || !ghMeta.sha;
+    const localDirty = !freshLocal && (ghMeta.dirty || !ghMeta.sha);   // máy mới chưa có dữ liệu riêng: tự tải từ GitHub, không hỏi
     if (!localDirty) { await ghApply(rem); toast('Đã tải bản mới từ GitHub'); return; }
     if (confirm('Trên GitHub đã có dữ liệu (' + gh.path + ').\n\nOK = tải dữ liệu từ GitHub về (thay thế dữ liệu trên máy này)\nHủy = giữ dữ liệu trên máy này và ghi đè lên GitHub')) { await ghApply(rem); toast('Đã tải từ GitHub'); }
     else { ghMeta.sha = rem.sha; ghMeta.dirty = true; await ghPush(); }
@@ -967,6 +1026,205 @@ $('#ghOff').onclick = () => {
   gh.token = ''; ghSaveCfg(); ghMeta = { sha: null, dirty: false }; ghSaveMeta(); setGh('off'); $('#modal').classList.remove('show'); toast('Đã ngắt kết nối GitHub');
 };
 
+/* ---------- Khóa bằng mật khẩu ---------- */
+/* Mật khẩu chỉ lưu dạng băm (PBKDF2-SHA256 + muối ngẫu nhiên) trong trình duyệt này, không gửi đi đâu và không đưa vào tệp JSON/GitHub. */
+const LS_PW = 'benhsu_pw_v1', LS_PW_OFF = 'benhsu_pw_off';
+const PW_ITER = 150000, IDLE_MS = 15 * 60 * 1000;
+let lockMode = 'unlock', pwFails = 0, pwBlockUntil = 0, lastAct = Date.now();
+const hasSubtle = () => !!(window.crypto && crypto.subtle);
+const hex = u8 => [...u8].map(b => b.toString(16).padStart(2, '0')).join('');
+function pwCfg() { try { const c = JSON.parse(localStorage.getItem(LS_PW) || 'null'); return c && c.h && c.s ? c : null; } catch (e) { return null; } }
+function cyrb53(str, seed) {
+  let h1 = 0xdeadbeef ^ seed, h2 = 0x41c6ce57 ^ seed;
+  for (let i = 0, ch; i < str.length; i++) { ch = str.charCodeAt(i); h1 = Math.imul(h1 ^ ch, 2654435761); h2 = Math.imul(h2 ^ ch, 1597334677); }
+  h1 = Math.imul(h1 ^ (h1 >>> 16), 2246822507) ^ Math.imul(h2 ^ (h2 >>> 13), 3266489909);
+  h2 = Math.imul(h2 ^ (h2 >>> 16), 2246822507) ^ Math.imul(h1 ^ (h1 >>> 13), 3266489909);
+  return 4294967296 * (2097151 & h2) + (h1 >>> 0);
+}
+async function pwHash(pw, saltHex, iter, method) {
+  if (method === 'p' && hasSubtle()) {
+    const key = await crypto.subtle.importKey('raw', new TextEncoder().encode(pw), 'PBKDF2', false, ['deriveBits']);
+    const salt = Uint8Array.from(saltHex.match(/../g), h => parseInt(h, 16));
+    const bits = await crypto.subtle.deriveBits({ name: 'PBKDF2', salt, iterations: iter, hash: 'SHA-256' }, key, 256);
+    return 'p' + hex(new Uint8Array(bits));
+  }
+  // dự phòng cho trình duyệt không có crypto.subtle
+  const x = saltHex + '|' + pw; let a = 0, b = 0;
+  for (let i = 0; i < 4000; i++) { a = cyrb53(x + a, i); b = cyrb53(x + b, a % 9973); }
+  return 'f' + a.toString(16) + '.' + b.toString(16);
+}
+async function setPw(pw) {
+  const s = hex(crypto.getRandomValues(new Uint8Array(16)));
+  const h = await pwHash(pw, s, PW_ITER, hasSubtle() ? 'p' : 'f');
+  localStorage.setItem(LS_PW, JSON.stringify({ s, i: PW_ITER, h }));
+  localStorage.removeItem(LS_PW_OFF);
+}
+function lkErr(m) {
+  $('#lkErr').textContent = m;
+  const b = $('.lockbox'); b.classList.remove('shake'); void b.offsetWidth; b.classList.add('shake');
+}
+function failPw() {
+  if (++pwFails >= 5) { pwFails = 0; pwBlockUntil = Date.now() + 30000; lkErr('Sai mật khẩu 5 lần liên tiếp — chờ 30 giây rồi thử lại.'); }
+  else lkErr('Mật khẩu chưa đúng.');
+  return false;
+}
+function pwWait() {
+  const wait = pwBlockUntil - Date.now();
+  if (wait > 0) { lkErr('Nhập sai nhiều lần — thử lại sau ' + Math.ceil(wait / 1000) + ' giây.'); return true; }
+  return false;
+}
+async function tryPw(pw) {
+  if (pwWait()) return false;
+  const c = pwCfg();
+  if (c && await pwHash(pw, c.s, c.i, c.h[0]) === c.h) { pwFails = 0; return true; }
+  return failPw();
+}
+
+/* ---------- Cấu hình đồng bộ GitHub được mã hóa (sync.enc.json) ---------- */
+/* Token KHÔNG bao giờ nằm dạng chữ thường trong trang. Cấu hình (tài khoản, kho, token) được mã hóa AES-GCM bằng khóa suy ra từ mật khẩu
+   (PBKDF2-SHA256, 250.000 vòng). Tệp sync.enc.json đặt cạnh index.html trên GitHub Pages; máy mới nhập đúng mật khẩu là giải mã được. */
+const SYNC_ITER = 250000;
+const b64u = u8 => { let s = ''; u8.forEach(b => s += String.fromCharCode(b)); return btoa(s); };
+const unb64u = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
+async function syncKey(pw, salt, iter) {
+  const km = await crypto.subtle.importKey('raw', new TextEncoder().encode(pw), 'PBKDF2', false, ['deriveKey']);
+  return crypto.subtle.deriveKey({ name: 'PBKDF2', salt, iterations: iter, hash: 'SHA-256' }, km, { name: 'AES-GCM', length: 256 }, false, ['encrypt', 'decrypt']);
+}
+async function encCfg(pw, obj) {
+  const salt = crypto.getRandomValues(new Uint8Array(16)), iv = crypto.getRandomValues(new Uint8Array(12));
+  const key = await syncKey(pw, salt, SYNC_ITER);
+  const ct = new Uint8Array(await crypto.subtle.encrypt({ name: 'AES-GCM', iv }, key, new TextEncoder().encode(JSON.stringify(obj))));
+  return { v: 1, kdf: 'PBKDF2-SHA256', i: SYNC_ITER, s: b64u(salt), n: b64u(iv), c: b64u(ct) };
+}
+async function decCfg(pw, blob) {
+  const key = await syncKey(pw, unb64u(blob.s), blob.i || SYNC_ITER);
+  const pt = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: unb64u(blob.n) }, key, unb64u(blob.c));
+  return JSON.parse(new TextDecoder().decode(pt));
+}
+async function loadSyncBlob() {
+  try {
+    const ctl = new AbortController(), t = setTimeout(() => ctl.abort(), 4000);
+    const r = await fetch('sync.enc.json', { cache: 'no-store', signal: ctl.signal }); clearTimeout(t);
+    if (!r.ok) return;
+    const j = await r.json();
+    if (j && j.v === 1 && j.s && j.n && j.c) syncBlob = j;
+  } catch (e) {}
+}
+async function applySyncBlob(pw) {   // ném lỗi nếu sai mật khẩu / không có tệp
+  if (!syncBlob || !hasSubtle()) throw new Error('no-blob');
+  const o = await decCfg(pw, syncBlob);
+  if (!o || !o.owner || !o.repo || !o.token) throw new Error('bad-blob');
+  gh = { owner: o.owner, repo: o.repo, branch: o.branch || 'main', path: o.path || 'benh-su.json', token: o.token };
+  ghSaveCfg(); ghMeta = { sha: null, dirty: false }; ghSaveMeta(); renderGh();
+}
+async function tryBlobPw(pw) {   // máy mới: chưa có mật khẩu cục bộ, dùng chính tệp mã hóa để xác thực
+  if (pwWait()) return false;
+  try { await applySyncBlob(pw); } catch (e) { return failPw(); }
+  pwFails = 0; await setPw(pw); return true;
+}
+async function syncExport() {
+  if (!ghOn()) return toast('Hãy kết nối GitHub trước (Tệp → Cài đặt đồng bộ GitHub)', 3500);
+  if (!sessionPw) return toast('Cần có mật khẩu trước (Tệp → Đặt / đổi mật khẩu), rồi khóa và mở lại để xuất', 4500);
+  if (!hasSubtle()) return toast('Trình duyệt này không hỗ trợ mã hóa (cần https hoặc localhost)', 4000);
+  if (sessionPw.length < 10 && !confirm('Mật khẩu hiện chỉ có ' + sessionPw.length + ' ký tự. Tệp sync.enc.json sẽ nằm công khai trên GitHub Pages nên mật khẩu ngắn dễ bị dò ra token.\n\nNên đổi sang mật khẩu từ 10 ký tự trở lên rồi xuất lại.\n\nVẫn xuất bằng mật khẩu hiện tại?')) return;
+  try {
+    const blob = await encCfg(sessionPw, { owner: gh.owner, repo: gh.repo, branch: gh.branch, path: gh.path, token: gh.token });
+    const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([JSON.stringify(blob, null, 2)], { type: 'application/json' }));
+    a.download = 'sync.enc.json'; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+    alert('Đã tải tệp sync.enc.json (token đã được mã hóa bằng mật khẩu của bạn).\n\nHãy tải tệp này lên GitHub Pages, CÙNG THƯ MỤC với index.html. Từ đó, trình duyệt/máy mới chỉ cần nhập mật khẩu là tự có token và tải dữ liệu về.\n\nLưu ý: nếu đổi mật khẩu hoặc đổi token thì phải xuất lại và tải lên lại tệp này.');
+  } catch (e) { toast('Không xuất được: ' + e.message, 4000); }
+}
+function showLock(mode) {
+  lockMode = mode;
+  $('#lock').className = 'show' + (locked ? ' full' : '');
+  const T = {
+    unlock: ['Bệnh sử đã khóa', 'Nhập mật khẩu để xem nội dung bên trong.', 'Mở khóa'],
+    setup: ['Tạo mật khẩu', 'Đặt mật khẩu để bảo vệ bệnh sử. Mỗi lần mở trang sẽ phải nhập mật khẩu này.', 'Đặt mật khẩu'],
+    change: ['Đổi mật khẩu', 'Nhập mật khẩu hiện tại, rồi mật khẩu mới.', 'Đổi mật khẩu']
+  }[mode];
+  $('#lkTitle').textContent = T[0]; $('#lkSub').textContent = T[1]; $('#lkGo').textContent = T[2];
+  $('#lkPw').placeholder = mode === 'change' ? 'Mật khẩu hiện tại' : 'Mật khẩu';
+  $('#lkRow1').style.display = mode === 'setup' ? 'none' : '';
+  $('#lkRow2').style.display = $('#lkRow3').style.display = mode === 'unlock' ? 'none' : '';
+  $('#lkForgot').style.display = mode === 'unlock' ? '' : 'none';
+  $('#lkRemove').style.display = mode === 'change' ? '' : 'none';
+  $('#lkCancel').style.display = !locked && mode !== 'unlock' ? '' : 'none';
+  ['#lkPw', '#lkPw2', '#lkPw3'].forEach(s => { $(s).value = ''; $(s).type = 'password'; });
+  $('#lkShow').checked = false; $('#lkErr').textContent = '';
+  setTimeout(() => $(mode === 'setup' ? '#lkPw2' : '#lkPw').focus(), 30);
+}
+function hideLock() { $('#lock').className = ''; }
+function unlockApp() {
+  locked = false; document.body.classList.remove('locked'); hideLock();
+  lastAct = Date.now(); renderAll(); renderChip();
+  if (!unlockApp.synced) { unlockApp.synced = true; if (ghOn()) ghSync(false); }
+}
+function lockNow() {
+  if (locked) return;
+  if (!pwCfg()) { toast('Chưa đặt mật khẩu — hãy tạo mật khẩu trước'); return showLock('setup'); }
+  syncFromSheet(); saveLocal();
+  if (fileHandle && fileState === 'ok' && dirtyFile) writeFile().catch(() => {});
+  if (document.activeElement && document.activeElement.blur) document.activeElement.blur();
+  locked = true; sessionPw = ''; closePops(); closeMenus(); $('#modal').classList.remove('show');
+  sheet.innerHTML = ''; $('#list').innerHTML = ''; $('#outline').innerHTML = '';
+  $('#docTitle').value = ''; $('#search').value = ''; document.title = 'Bệnh sử — đã khóa';
+  document.body.classList.add('locked'); showLock('unlock');
+}
+$('#lockForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  const go = $('#lkGo'); if (go.disabled) return;
+  go.disabled = true; $('#lkErr').textContent = '';
+  try {
+    if (lockMode === 'unlock') {
+      const pw = $('#lkPw').value; if (!pw) return lkErr('Hãy nhập mật khẩu.');
+      const ok = pwCfg() ? await tryPw(pw) : await tryBlobPw(pw);
+      if (ok) {
+        sessionPw = pw;
+        if (!ghOn()) { try { await syncBlobP; await applySyncBlob(pw); } catch (e) {} }   // trình duyệt này mất token: tự điền lại từ tệp mã hóa
+        unlockApp();
+      } else $('#lkPw').select();
+    } else {
+      if (lockMode === 'change' && !(await tryPw($('#lkPw').value))) return;
+      const a = $('#lkPw2').value, b = $('#lkPw3').value;
+      if (a.length < 4) return lkErr('Mật khẩu mới tối thiểu 4 ký tự.');
+      if (a !== b) return lkErr('Hai lần nhập mật khẩu mới chưa giống nhau.');
+      await setPw(a); sessionPw = a;
+      toast(ghOn() ? 'Đã lưu mật khẩu — hãy xuất lại cấu hình đồng bộ (Tệp) và tải sync.enc.json lên GitHub Pages' : 'Đã lưu mật khẩu', ghOn() ? 6000 : 2400);
+      if (locked) unlockApp(); else hideLock();
+    }
+  } catch (err) { lkErr('Lỗi: ' + err.message); }
+  finally { go.disabled = false; }
+});
+$('#lkShow').onchange = e => ['#lkPw', '#lkPw2', '#lkPw3'].forEach(s => { $(s).type = e.target.checked ? 'text' : 'password'; });
+$('#lkCancel').onclick = hideLock;
+$('#lock').addEventListener('keydown', e => { if (e.key === 'Escape' && !locked) hideLock(); });
+$('#lkRemove').onclick = async () => {
+  const pw = $('#lkPw').value; if (!pw) return lkErr('Nhập mật khẩu hiện tại để xóa mật khẩu.');
+  if (!(await tryPw(pw))) return;
+  if (!confirm('Xóa mật khẩu? Sau đó ai mở trang này trên trình duyệt này cũng xem được bệnh sử.')) return;
+  localStorage.removeItem(LS_PW); localStorage.setItem(LS_PW_OFF, '1'); hideLock(); toast('Đã xóa mật khẩu');
+};
+$('#lkForgot').onclick = async () => {
+  if (!confirm('Quên mật khẩu?\n\nCách duy nhất là xóa toàn bộ dữ liệu bệnh sử đang lưu trong trình duyệt này (kể cả mật khẩu và token GitHub). Dữ liệu đã đồng bộ lên GitHub hoặc đã lưu ra tệp JSON thì vẫn còn nguyên và nhập lại được.\n\nXóa dữ liệu trong trình duyệt này?')) return;
+  wiped = true; gh.token = ''; clearTimeout(saveTimer); clearTimeout(ghTimer);
+  [LS_KEY, LS_UI, LS_GH, LS_GHM, LS_PW, LS_PW_OFF].forEach(k => { try { localStorage.removeItem(k); } catch (e) {} });
+  await idb.del('handle'); location.reload();
+};
+/* Tự khóa khi không thao tác 15 phút */
+['keydown', 'pointerdown', 'mousemove', 'wheel', 'touchstart'].forEach(ev => document.addEventListener(ev, () => { lastAct = Date.now(); }, { capture: true, passive: true }));
+setInterval(() => { if (!locked && pwCfg() && Date.now() - lastAct > IDLE_MS) lockNow(); }, 20000);
+async function gate() {
+  syncBlobP = loadSyncBlob();
+  if (pwCfg()) { showLock('unlock'); return; }
+  if (localStorage.getItem(LS_PW_OFF) === '1') { unlockApp(); return; }
+  await syncBlobP;
+  if (syncBlob) {   // máy/trình duyệt mới nhưng đã có cấu hình đồng bộ mã hóa trên GitHub Pages
+    showLock('unlock');
+    $('#lkSub').textContent = 'Trình duyệt này chưa có mật khẩu. Nhập mật khẩu bạn đã dùng trước đây — token GitHub sẽ tự được điền và dữ liệu tự tải về.';
+    $('#lkForgot').style.display = 'none';
+  } else showLock('setup');
+}
+
 /* ---------- Khởi động ---------- */
 async function init() {
   ghLoadCfg(); renderGh();
@@ -975,16 +1233,15 @@ async function init() {
   applyBg(); applySide();
   let loaded = false;
   try { const raw = localStorage.getItem(LS_KEY); if (raw) { const data = JSON.parse(raw); state.docs = normalize(data); state.activeId = data.activeId; state.savedAt = Date.parse(data.savedAt) || 0; loaded = state.docs.length > 0; } } catch (e) {}
-  if (!loaded) seedDocs();
+  if (!loaded) { seedDocs(); freshLocal = true; }
   if (!cur()) state.activeId = state.docs[0].id;
   renderAll(); renderChip(); setSaveText(loaded ? 'Đã tải từ trình duyệt' : 'Chào mừng!');
-  if (ghOn()) ghSync(false);
   if (supportsFS) {
     const h = await idb.get('handle');
     if (h) { fileHandle = h; try { fileState = (await h.queryPermission({ mode: 'readwrite' })) === 'granted' ? 'ok' : 'needperm'; } catch (e) { fileState = 'needperm'; } renderChip(); }
   }
 }
-init();
+init(); gate();
 })();
 </script>
 </body>
