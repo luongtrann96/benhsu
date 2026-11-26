@@ -1,7 +1,7 @@
 {
   "app": "phan-mem-benh-su",
   "version": 1,
-  "savedAt": "2026-11-26T07:05:15.546Z",
+  "savedAt": "2026-11-26T07:05:57.759Z",
   "settings": {
     "background": "goodnote"
   },
@@ -20,7 +20,7 @@
       "id": "mww5jm5dbgx0w",
       "title": "1. TIÊU HOÁ",
       "html": "<h1>1. TIÊU HOÁ</h1><p><br></p>",
-      "parentId": "mww5jm5bja3r2",
+      "parentId": null,
       "icon": "🇻🇳",
       "createdAt": "2026-11-25T13:21:15.745Z",
       "updatedAt": "2026-11-26T07:05:11.102Z"
