@@ -1,7 +1,7 @@
 {
   "app": "phan-mem-benh-su",
   "version": 1,
-  "savedAt": "2026-11-26T08:55:58.527Z",
+  "savedAt": "2026-11-26T08:56:01.036Z",
   "settings": {
     "background": "goodnote"
   },
@@ -56,11 +56,11 @@
     {
       "id": "mwx7unf29ek3u",
       "title": "Lồng ruột",
-      "html": "",
+      "html": "<p><br></p>",
       "parentId": "mwx7unf25qn2c",
       "icon": "",
       "createdAt": "2026-11-26T07:13:36.014Z",
-      "updatedAt": "2026-11-26T08:55:57.927Z"
+      "updatedAt": "2026-11-26T08:55:58.787Z"
     },
     {
       "id": "mwx7unf2oiosu",
