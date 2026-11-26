@@ -129,8 +129,6 @@ body[data-bg=charcoal]{--d1:#454b55;--d2:#2a2e35}
   width:794px;min-height:1123px;background-color:#fffefb;padding:76px 88px;margin:6px 0 40px;
   box-shadow:0 1px 2px rgba(15,23,42,.12),0 6px 18px rgba(15,23,42,.14),0 30px 60px rgba(15,23,42,.14);border-radius:4px;outline:none;
   font-family:'Times New Roman',Times,serif;font-size:13pt;line-height:1.5;color:#111;
-  background-image:linear-gradient(to bottom,transparent calc(1123px - 2px),rgba(59,111,240,.28) calc(1123px - 2px),rgba(59,111,240,.28) 1123px);
-  background-size:100% 1123px;background-repeat:repeat-y;
   caret-color:#3b6ff0;cursor:image-set(url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='19' viewBox='0 0 11 19' shape-rendering='crispEdges'%3E%3Cg fill='white'%3E%3Crect x='2' y='1' width='7' height='3'/%3E%3Crect x='2' y='15' width='7' height='3'/%3E%3Crect x='4' y='1' width='3' height='17'/%3E%3C/g%3E%3Cg fill='%23111'%3E%3Crect x='3' y='2' width='5' height='1'/%3E%3Crect x='3' y='16' width='5' height='1'/%3E%3Crect x='5' y='2' width='1' height='15'/%3E%3C/g%3E%3C/svg%3E") 1x,url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='38' viewBox='0 0 11 19' shape-rendering='crispEdges'%3E%3Cg fill='white'%3E%3Crect x='2' y='1' width='7' height='3'/%3E%3Crect x='2' y='15' width='7' height='3'/%3E%3Crect x='4' y='1' width='3' height='17'/%3E%3C/g%3E%3Cg fill='%23111'%3E%3Crect x='3' y='2' width='5' height='1'/%3E%3Crect x='3' y='16' width='5' height='1'/%3E%3Crect x='5' y='2' width='1' height='15'/%3E%3C/g%3E%3C/svg%3E") 2x) 5 9,text;
   word-wrap:break-word;overflow-wrap:anywhere;transform-origin:top center
 }
@@ -166,17 +164,6 @@ body[data-bg=charcoal]{--d1:#454b55;--d2:#2a2e35}
 #modal .acts{display:flex;gap:8px;justify-content:flex-end;margin-top:16px;flex-wrap:wrap}
 #modal details{font-size:12.5px;color:#374151;margin-top:10px}#modal details ol{padding-left:18px;margin:6px 0;line-height:1.6}
 @media(max-width:900px){#side{display:none}#sheet{padding:40px 30px}}
-#lock{position:fixed;inset:0;z-index:200;background:radial-gradient(130% 100% at 50% 0%,#e9ecf1,#d3d8e0);display:none;align-items:center;justify-content:center;padding:16px}
-#lock.show{display:flex}
-#lock .box{background:#fff;border-radius:16px;width:min(410px,100%);padding:26px 26px 20px;box-shadow:0 30px 80px rgba(15,23,42,.3)}
-#lock h3{margin:0 0 4px;font-size:18px}
-#lock p.sub{margin:0 0 12px;color:var(--muted);font-size:12.5px;line-height:1.5}
-#lock label{display:block;font-size:12px;font-weight:600;margin:10px 0 4px}
-#lock input{width:100%;border:1px solid var(--line);border-radius:8px;padding:9px 10px;outline:none;background:#f9fafb}
-#lock input:focus{border-color:var(--accent);background:#fff}
-#lock .msg{color:#dc2626;font-size:12.5px;min-height:18px;margin-top:8px}
-#lock .acts{display:flex;gap:8px;justify-content:space-between;align-items:center;margin-top:10px}
-#lock .acts a{font-size:12.5px;color:var(--accent);cursor:pointer}
 
 @media print{
   #bg,#top,#toolbar,#side,#status,#toast{display:none!important}
@@ -209,9 +196,6 @@ body[data-bg=charcoal]{--d1:#454b55;--d2:#2a2e35}
             <hr>
             <button data-a="ghSettings">Cài đặt đồng bộ GitHub…</button>
             <button data-a="ghSync">Đồng bộ GitHub ngay</button>
-            <hr>
-            <button data-a="pw">Đổi mật khẩu…</button>
-            <button data-a="lock">Khóa ngay</button>
             <hr>
             <button data-a="word">Tải xuống dạng Word (.doc)</button>
             <button data-a="print">In / Lưu PDF <kbd>Ctrl+P</kbd></button>
@@ -307,34 +291,23 @@ body[data-bg=charcoal]{--d1:#454b55;--d2:#2a2e35}
 <div id="modal"><div class="box">
   <h3>Đồng bộ lên GitHub</h3>
   <p class="sub">Mỗi lần soạn thảo, toàn bộ dữ liệu được tự động ghi vào một tệp JSON trong kho GitHub của bạn (sau khi ngừng gõ ~2 giây). Mở trang trên máy khác là có lại dữ liệu.</p>
-  <div class="warnbox"><b>Bảo mật:</b> bệnh án là dữ liệu nhạy cảm. Hãy lưu dữ liệu ở kho <b>Private</b> (riêng tư), không đặt tên/thông tin định danh bệnh nhân vào kho công khai. Token được mã hóa bằng mật khẩu của bạn trước khi lưu.</div>
+  <div class="warnbox"><b>Bảo mật:</b> bệnh án là dữ liệu nhạy cảm. Hãy lưu dữ liệu ở kho <b>Private</b> (riêng tư), không đặt tên/thông tin định danh bệnh nhân vào kho công khai. Mã token chỉ lưu trong trình duyệt này.</div>
   <div class="row"><div><label>Tài khoản GitHub (owner)</label><input id="ghOwner" placeholder="luongtrann96" autocomplete="off"></div>
   <div><label>Tên kho (repo)</label><input id="ghRepo" placeholder="benh-su-data" autocomplete="off"></div></div>
   <div class="row"><div><label>Nhánh</label><input id="ghBranch" placeholder="main" autocomplete="off"></div>
   <div><label>Đường dẫn tệp JSON</label><input id="ghPath" placeholder="benh-su.json" autocomplete="off"></div></div>
   <label>Personal Access Token</label><input id="ghToken" type="password" placeholder="github_pat_…" autocomplete="off">
-  <label>Kho chứa trang web này (nơi lưu token mã hóa)</label><input id="ghPages" placeholder="luongtrann96/ten-kho-trang-web" autocomplete="off">
   <details><summary>Cách tạo token (1 phút)</summary><ol>
     <li>GitHub → Settings → Developer settings → Personal access tokens → <b>Fine-grained tokens</b> → Generate new token.</li>
     <li>Repository access: chọn <b>Only select repositories</b> → chọn đúng kho dữ liệu.</li>
     <li>Permissions → Repository permissions → <b>Contents: Read and write</b>.</li>
-    <li>Nếu kho trang web khác kho dữ liệu: chọn thêm cả kho trang web ở bước 2.</li>
     <li>Tạo xong, copy token dán vào ô trên.</li></ol></details>
-  <label style="display:flex;gap:8px;align-items:flex-start;font-weight:500;margin-top:12px"><input type="checkbox" id="ghShare" checked style="width:auto;padding:0;margin-top:3px"><span>Lưu token đã mã hóa bằng mật khẩu lên GitHub (tệp <b>token.enc.json</b>) để trình duyệt/máy khác chỉ cần nhập mật khẩu, không phải dán token lại.</span></label>
   <div class="acts">
     <button class="btn" id="ghOff" style="color:#dc2626">Ngắt kết nối</button>
     <button class="btn" id="ghClose">Đóng</button>
     <button class="btn pri" id="ghSave">Kết nối &amp; đồng bộ</button>
   </div>
 </div></div>
-<div id="lock"><form class="box" id="lkForm" autocomplete="on">
-  <h3 id="lkTitle"></h3><p class="sub" id="lkSub"></p>
-  <div id="lkRowOld"><label>Mật khẩu hiện tại</label><input id="lkOld" type="password" autocomplete="current-password"></div>
-  <div><label id="lkLab">Mật khẩu</label><input id="lkPw" type="password" autocomplete="current-password"></div>
-  <div id="lkRow2"><label>Nhập lại mật khẩu</label><input id="lkPw2" type="password" autocomplete="new-password"></div>
-  <div class="msg" id="lkMsg"></div>
-  <div class="acts"><a id="lkForgot">Quên mật khẩu?</a><span><button type="button" class="btn" id="lkCancel">Hủy</button> <button type="submit" class="btn pri" id="lkOk">Mở khóa</button></span></div>
-</form></div>
 <input type="file" id="fileIn" accept=".json,application/json" hidden>
 <input type="file" id="imgIn" accept="image/*" hidden>
 
@@ -841,8 +814,6 @@ const actions = {
   quote: () => exec('formatBlock', 'blockquote'),
   ghSettings: () => ghOpenModal(),
   ghSync: () => { if (!ghOn()) ghOpenModal(); else ghSync(true); },
-  pw: () => { if (!sessionPw) return toast('Chưa bật khóa mật khẩu'); lkShow('change'); },
-  lock: () => { syncFromSheet(); saveLocal(); locking = true; location.reload(); },
   side: () => { ui.side = !ui.side; applySide(); saveUI(); }
 };
 $$('[data-a]').forEach(b => b.addEventListener('click', () => { closeMenus(); actions[b.dataset.a] && actions[b.dataset.a](); }));
@@ -889,17 +860,16 @@ document.addEventListener('keydown', e => {
   if (e.altKey && k === 'n') { e.preventDefault(); actions.new(); }
   if ((e.ctrlKey || e.metaKey) && k === '\\') { e.preventDefault(); exec('removeFormat'); }
 });
-window.addEventListener('beforeunload', e => { syncFromSheet(); saveLocal(); if (locking) return; if ((dirtyFile && fileHandle) || (ghOn() && ghMeta.dirty)) { e.preventDefault(); e.returnValue = ''; } });
+window.addEventListener('beforeunload', e => { syncFromSheet(); saveLocal(); if ((dirtyFile && fileHandle) || (ghOn() && ghMeta.dirty)) { e.preventDefault(); e.returnValue = ''; } });
 
 /* ---------- Đồng bộ GitHub ---------- */
 const LS_GH = 'benhsu_gh_cfg', LS_GHM = 'benhsu_gh_meta';
-let gh = { owner: '', repo: '', branch: 'main', path: 'benh-su.json', token: '', pagesRepo: '' };
-let freshSeed = false;
+let gh = { owner: '', repo: '', branch: 'main', path: 'benh-su.json', token: '' };
 let ghMeta = { sha: null, dirty: false };
 let ghStat = 'off', ghMsg = '', ghLastOk = 0, ghBusy = false, ghAgain = false, ghTimer = null;
 const ghOn = () => !!(gh.owner && gh.repo && gh.token);
 function ghLoadCfg() { try { Object.assign(gh, JSON.parse(localStorage.getItem(LS_GH) || '{}')); Object.assign(ghMeta, JSON.parse(localStorage.getItem(LS_GHM) || '{}')); } catch (e) {} }
-function ghSaveCfg() { try { const c = Object.assign({}, gh); if (sessionPw) c.token = ''; localStorage.setItem(LS_GH, JSON.stringify(c)); } catch (e) {} }
+function ghSaveCfg() { try { localStorage.setItem(LS_GH, JSON.stringify(gh)); } catch (e) {} }
 function ghSaveMeta() { try { localStorage.setItem(LS_GHM, JSON.stringify(ghMeta)); } catch (e) {} }
 function ghUrl() { return 'https://api.github.com/repos/' + encodeURIComponent(gh.owner) + '/' + encodeURIComponent(gh.repo) + '/contents/' + gh.path.split('/').map(encodeURIComponent).join('/'); }
 function ghHeaders(extra) { return Object.assign({ 'Authorization': 'Bearer ' + gh.token, 'Accept': 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28' }, extra || {}); }
@@ -966,13 +936,12 @@ async function ghPush() {
 }
 async function ghSync(manual) {
   if (!ghOn()) return renderGh();
-  const fresh = freshSeed; freshSeed = false;
   setGh('syncing');
   try {
     const rem = await ghGet();
     if (!rem) { ghMeta.sha = null; ghMeta.dirty = true; await ghPush(); if (manual && ghStat === 'ok') toast('Đã tạo ' + gh.path + ' trên GitHub'); return; }
     if (rem.sha === ghMeta.sha) { if (ghMeta.dirty) await ghPush(); else setGh('ok'); if (manual && ghStat === 'ok') toast('Đã đồng bộ'); return; }
-    const localDirty = (ghMeta.dirty || !ghMeta.sha) && !fresh;
+    const localDirty = ghMeta.dirty || !ghMeta.sha;
     if (!localDirty) { await ghApply(rem); toast('Đã tải bản mới từ GitHub'); return; }
     if (confirm('Trên GitHub đã có dữ liệu (' + gh.path + ').\n\nOK = tải dữ liệu từ GitHub về (thay thế dữ liệu trên máy này)\nHủy = giữ dữ liệu trên máy này và ghi đè lên GitHub')) { await ghApply(rem); toast('Đã tải từ GitHub'); }
     else { ghMeta.sha = rem.sha; ghMeta.dirty = true; await ghPush(); }
@@ -980,163 +949,27 @@ async function ghSync(manual) {
 }
 function ghOpenModal() {
   $('#ghOwner').value = gh.owner; $('#ghRepo').value = gh.repo; $('#ghBranch').value = gh.branch || 'main';
-  $('#ghPath').value = gh.path || 'benh-su.json'; $('#ghToken').value = gh.token; $('#ghPages').value = gh.pagesRepo || derivePages();
+  $('#ghPath').value = gh.path || 'benh-su.json'; $('#ghToken').value = gh.token;
   $('#modal').classList.add('show');
 }
 $('#ghChip').onclick = () => { if (ghStat === 'err' && ghOn()) { if (confirm(ghMsg + '\n\nBấm OK để thử đồng bộ lại, Hủy để mở cài đặt.')) ghSync(true); else ghOpenModal(); } else if (!ghOn()) ghOpenModal(); else ghSync(true); };
 $('#ghClose').onclick = () => $('#modal').classList.remove('show');
 $('#modal').addEventListener('mousedown', e => { if (e.target.id === 'modal') $('#modal').classList.remove('show'); });
-$('#ghSave').onclick = async () => {
+$('#ghSave').onclick = () => {
   const n = { owner: $('#ghOwner').value.trim(), repo: $('#ghRepo').value.trim().replace(/\.git$/, ''), branch: $('#ghBranch').value.trim() || 'main',
-              path: $('#ghPath').value.trim().replace(/^\/+/, '') || 'benh-su.json', token: $('#ghToken').value.trim(),
-              pagesRepo: $('#ghPages').value.trim().replace(/^https?:\/\/github\.com\//, '').replace(/\/+$/, '') };
+              path: $('#ghPath').value.trim().replace(/^\/+/, '') || 'benh-su.json', token: $('#ghToken').value.trim() };
   if (!n.owner || !n.repo || !n.token) return toast('Cần nhập tài khoản, tên kho và token');
-  const share = $('#ghShare').checked;
-  if (share && !/^[\w.-]+\/[\w.-]+$/.test(n.pagesRepo)) return toast('Nhập kho chứa trang web dạng tên-tài-khoản/tên-kho');
   if (n.owner !== gh.owner || n.repo !== gh.repo || n.branch !== gh.branch || n.path !== gh.path) { ghMeta = { sha: null, dirty: true }; ghSaveMeta(); }
-  gh = n; ghSaveCfg(); const blob = await ghSaveBlob(); $('#modal').classList.remove('show');
-  await ghSync(true);
-  if (share && blob && ghStat === 'ok') {
-    try { await ghPushBlob(blob); toast('Đã lưu token mã hóa lên GitHub — trình duyệt khác chỉ cần nhập mật khẩu'); }
-    catch (e) { toast('Chưa lưu được token mã hóa: ' + e.message); }
-  }
+  gh = n; ghSaveCfg(); $('#modal').classList.remove('show'); ghSync(true);
 };
 $('#ghOff').onclick = () => {
   if (!confirm('Ngắt kết nối GitHub? Dữ liệu trên GitHub vẫn được giữ nguyên, chỉ xóa token khỏi trình duyệt này.')) return;
-  gh.token = ''; ghSaveCfg(); try { localStorage.removeItem(LS_GHB); } catch (e) {} ghMeta = { sha: null, dirty: false }; ghSaveMeta(); setGh('off'); $('#modal').classList.remove('show'); toast('Đã ngắt kết nối GitHub');
+  gh.token = ''; ghSaveCfg(); ghMeta = { sha: null, dirty: false }; ghSaveMeta(); setGh('off'); $('#modal').classList.remove('show'); toast('Đã ngắt kết nối GitHub');
 };
-
-/* ---------- Khóa mật khẩu & token mã hóa ---------- */
-const LS_PW = 'benhsu_pw_v1', LS_GHB = 'benhsu_ghblob_v1', ENC_FILE = 'token.enc.json';
-let sessionPw = null, locking = false, lkMode = '', lkResolve = null, lkRemote = null, lkReset = false;
-const u8ToB64 = u => { let s = ''; for (let i = 0; i < u.length; i += 0x8000) s += String.fromCharCode.apply(null, u.subarray(i, i + 0x8000)); return btoa(s); };
-const b64ToU8 = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
-const crypt = {
-  async key(pw, salt, iter) {
-    const m = await crypto.subtle.importKey('raw', new TextEncoder().encode(pw), 'PBKDF2', false, ['deriveKey']);
-    return crypto.subtle.deriveKey({ name: 'PBKDF2', salt, iterations: iter, hash: 'SHA-256' }, m, { name: 'AES-GCM', length: 256 }, false, ['encrypt', 'decrypt']);
-  },
-  async enc(pw, obj) {
-    const salt = crypto.getRandomValues(new Uint8Array(16)), iv = crypto.getRandomValues(new Uint8Array(12)), iter = 250000;
-    const k = await this.key(pw, salt, iter);
-    const ct = new Uint8Array(await crypto.subtle.encrypt({ name: 'AES-GCM', iv }, k, new TextEncoder().encode(JSON.stringify(obj))));
-    return { v: 1, kdf: 'PBKDF2-SHA256', iter, salt: u8ToB64(salt), iv: u8ToB64(iv), ct: u8ToB64(ct) };
-  },
-  async dec(pw, b) {
-    const iter = Math.min(Math.max(+b.iter || 250000, 1000), 1000000);
-    const k = await this.key(pw, b64ToU8(b.salt), iter);
-    const pt = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: b64ToU8(b.iv) }, k, b64ToU8(b.ct));
-    return JSON.parse(new TextDecoder().decode(pt));
-  }
-};
-function derivePages() {
-  const h = location.hostname;
-  if (!/\.github\.io$/i.test(h)) return '';
-  const seg = location.pathname.split('/')[1] || '';
-  return h.split('.')[0] + '/' + ((!seg || seg.includes('.')) ? h : seg);
-}
-async function fetchRemoteBlob() {
-  try {
-    const r = await fetch(ENC_FILE + '?t=' + Date.now(), { cache: 'no-store' });
-    if (!r.ok) return null;
-    const j = await r.json();
-    return j && j.v === 1 && j.ct && j.salt && j.iv ? j : null;
-  } catch (e) { return null; }
-}
-async function ghSaveBlob() {
-  try {
-    if (!sessionPw) return null;
-    if (!ghOn()) { localStorage.removeItem(LS_GHB); return null; }
-    const b = await crypt.enc(sessionPw, { owner: gh.owner, repo: gh.repo, branch: gh.branch, path: gh.path, token: gh.token, pagesRepo: gh.pagesRepo || '' });
-    localStorage.setItem(LS_GHB, JSON.stringify(b)); return b;
-  } catch (e) { return null; }
-}
-async function loadBlobCfg() {
-  if (!sessionPw) return;
-  try { const b = localStorage.getItem(LS_GHB); if (b) Object.assign(gh, await crypt.dec(sessionPw, JSON.parse(b))); } catch (e) {}
-  if (gh.token) { ghSaveCfg(); await ghSaveBlob(); }   // chuyển token cũ (chữ thường) sang dạng mã hóa
-}
-async function ghPushBlob(blob) {
-  const m = /^([\w.-]+)\/([\w.-]+)$/.exec(gh.pagesRepo || ''); if (!m || !blob) throw new Error('Chưa khai báo kho chứa trang web');
-  const url = 'https://api.github.com/repos/' + encodeURIComponent(m[1]) + '/' + encodeURIComponent(m[2]) + '/contents/' + ENC_FILE;
-  let sha = null;
-  const g = await fetch(url, { headers: ghHeaders(), cache: 'no-store' });
-  if (g.ok) sha = (await g.json()).sha; else if (g.status !== 404) throw await ghErr(g);
-  const body = { message: 'Cập nhật token mã hóa', content: b64enc(JSON.stringify(blob)) }; if (sha) body.sha = sha;
-  const p = await fetch(url, { method: 'PUT', headers: ghHeaders({ 'Content-Type': 'application/json' }), body: JSON.stringify(body) });
-  if (!p.ok) throw await ghErr(p);
-}
-function lkShow(mode) {
-  lkMode = mode;
-  const T = {
-    unlock: ['Nhập mật khẩu', 'Phần mềm bệnh sử được khóa bằng mật khẩu.', 'Mở khóa'],
-    remote: ['Nhập mật khẩu', 'Tìm thấy token GitHub đã mã hóa trong kho của bạn. Nhập mật khẩu để mở khóa và tự kết nối GitHub trên trình duyệt này.', 'Mở khóa'],
-    create: ['Tạo mật khẩu', 'Đặt mật khẩu cho phần mềm (tối thiểu 8 ký tự, nên dùng cụm từ dài). Mật khẩu này cũng mã hóa token GitHub — quên mật khẩu thì không khôi phục được.', 'Tạo mật khẩu'],
-    change: ['Đổi mật khẩu', 'Nhập mật khẩu hiện tại và mật khẩu mới.', 'Đổi mật khẩu']
-  }[mode];
-  const isNew = mode === 'create' || mode === 'change';
-  $('#lkTitle').textContent = T[0]; $('#lkSub').textContent = T[1]; $('#lkOk').textContent = T[2];
-  $('#lkRowOld').style.display = mode === 'change' ? '' : 'none';
-  $('#lkRow2').style.display = isNew ? '' : 'none';
-  $('#lkCancel').style.display = mode === 'change' ? '' : 'none';
-  $('#lkForgot').style.display = (mode === 'unlock' || mode === 'remote') ? '' : 'none';
-  $('#lkLab').textContent = isNew ? 'Mật khẩu mới' : 'Mật khẩu';
-  $('#lkPw').autocomplete = isNew ? 'new-password' : 'current-password';
-  ['#lkOld', '#lkPw', '#lkPw2'].forEach(s => $(s).value = ''); $('#lkMsg').textContent = '';
-  $('#lock').classList.add('show'); setTimeout(() => $(mode === 'change' ? '#lkOld' : '#lkPw').focus(), 30);
-}
-function lkDone(pw) {
-  sessionPw = pw; $('#lock').classList.remove('show'); ['#lkOld', '#lkPw', '#lkPw2'].forEach(s => $(s).value = '');
-  if (lkResolve) { const r = lkResolve; lkResolve = null; r(true); }
-}
-$('#lkCancel').onclick = () => $('#lock').classList.remove('show');
-$('#lkForgot').onclick = () => {
-  if (!confirm('Đặt lại mật khẩu sẽ xóa token GitHub đã lưu trên máy này (bạn phải nhập lại token). Dữ liệu bệnh án trên máy không bị xóa.\n\nTiếp tục?')) return;
-  lkReset = true; lkShow('create');
-};
-$('#lkForm').addEventListener('submit', async e => {
-  e.preventDefault();
-  const msg = t => { $('#lkMsg').textContent = t; }, btn = $('#lkOk'), pw = $('#lkPw').value;
-  if (!pw) return msg('Hãy nhập mật khẩu');
-  btn.disabled = true; msg('Đang xử lý…');
-  try {
-    if (lkMode === 'unlock' || lkMode === 'remote') {
-      let ok = false;
-      if (lkMode === 'unlock') { try { await crypt.dec(pw, JSON.parse(localStorage.getItem(LS_PW))); ok = true; } catch (e2) {} }
-      if (!ok) {   // máy khác có thể đã đổi mật khẩu: thử với token mã hóa trên GitHub
-        if (!lkRemote) lkRemote = await fetchRemoteBlob();
-        if (lkRemote) { try { await crypt.dec(pw, lkRemote); localStorage.setItem(LS_PW, JSON.stringify(await crypt.enc(pw, { ok: 1 }))); localStorage.setItem(LS_GHB, JSON.stringify(lkRemote)); ok = true; } catch (e2) {} }
-      }
-      if (!ok) return msg('Sai mật khẩu');
-      lkDone(pw);
-    } else if (lkMode === 'create') {
-      if (pw.length < 8) return msg('Mật khẩu cần tối thiểu 8 ký tự');
-      if (pw !== $('#lkPw2').value) return msg('Hai lần nhập chưa giống nhau');
-      if (lkReset) { localStorage.removeItem(LS_GHB); try { const c = JSON.parse(localStorage.getItem(LS_GH) || '{}'); c.token = ''; localStorage.setItem(LS_GH, JSON.stringify(c)); } catch (e3) {} }
-      localStorage.setItem(LS_PW, JSON.stringify(await crypt.enc(pw, { ok: 1 })));
-      lkDone(pw);
-    } else if (lkMode === 'change') {
-      try { await crypt.dec($('#lkOld').value, JSON.parse(localStorage.getItem(LS_PW))); } catch (e2) { return msg('Mật khẩu hiện tại chưa đúng'); }
-      if (pw.length < 8) return msg('Mật khẩu mới cần tối thiểu 8 ký tự');
-      if (pw !== $('#lkPw2').value) return msg('Hai lần nhập chưa giống nhau');
-      sessionPw = pw; localStorage.setItem(LS_PW, JSON.stringify(await crypt.enc(pw, { ok: 1 })));
-      const b = await ghSaveBlob(); $('#lock').classList.remove('show'); toast('Đã đổi mật khẩu');
-      if (b && gh.pagesRepo) { try { await ghPushBlob(b); toast('Đã đổi mật khẩu và cập nhật token mã hóa trên GitHub'); } catch (e2) { toast('Đã đổi mật khẩu, nhưng chưa cập nhật được GitHub: ' + e2.message); } }
-    }
-  } catch (err) { msg('Lỗi: ' + err.message); }
-  finally { btn.disabled = false; }
-});
-async function boot() {
-  if (!(window.crypto && crypto.subtle)) { toast('Trình duyệt không hỗ trợ mã hóa (cần https) — chưa có khóa mật khẩu'); return init(); }
-  let mode = 'unlock';
-  if (!localStorage.getItem(LS_PW)) { lkRemote = await fetchRemoteBlob(); mode = lkRemote ? 'remote' : 'create'; }
-  await new Promise(res => { lkResolve = res; lkShow(mode); });
-  await init();
-}
 
 /* ---------- Khởi động ---------- */
 async function init() {
-  ghLoadCfg(); await loadBlobCfg(); renderGh();
+  ghLoadCfg(); renderGh();
   try { Object.assign(ui, JSON.parse(localStorage.getItem(LS_UI) || '{}')); } catch (e) {}
   if (!ui.closed || typeof ui.closed !== 'object') ui.closed = {};
   applyBg(); applySide();
@@ -1144,7 +977,6 @@ async function init() {
   try { const raw = localStorage.getItem(LS_KEY); if (raw) { const data = JSON.parse(raw); state.docs = normalize(data); state.activeId = data.activeId; state.savedAt = Date.parse(data.savedAt) || 0; loaded = state.docs.length > 0; } } catch (e) {}
   if (!loaded) seedDocs();
   if (!cur()) state.activeId = state.docs[0].id;
-  freshSeed = !loaded;
   renderAll(); renderChip(); setSaveText(loaded ? 'Đã tải từ trình duyệt' : 'Chào mừng!');
   if (ghOn()) ghSync(false);
   if (supportsFS) {
@@ -1152,7 +984,7 @@ async function init() {
     if (h) { fileHandle = h; try { fileState = (await h.queryPermission({ mode: 'readwrite' })) === 'granted' ? 'ok' : 'needperm'; } catch (e) { fileState = 'needperm'; } renderChip(); }
   }
 }
-boot();
+init();
 })();
 </script>
 </body>
